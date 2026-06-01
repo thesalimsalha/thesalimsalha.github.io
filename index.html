@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salim Salha · AI Project Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..800;1,6..72,300..700&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5EFE4;
+    --paper-2:#EFE7D8;
+    --panel:#FBF7EF;
+    --ink:#1C1813;
+    --ink-soft:#433C32;
+    --muted:#736A5C;
+    --faint:#9A9082;
+    --line:#DDD2BD;
+    --line-strong:#C9BCA1;
+    --clay:#2C6B47;
+    --clay-deep:#1C5037;
+    --teal:#5E6B4E;
+    --code-bg:#1E1A15;
+    --code-panel:#262019;
+    --code-text:#E9E0CE;
+    --code-dim:#9C9078;
+    --code-amber:#E6A356;
+    --code-green:#9CB37E;
+    --code-clay:#E58A63;
+    --maxw:1180px;
+    --r:3px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Schibsted Grotesk',system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    font-weight:400;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    position:relative;
+  }
+  /* paper grain */
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  }
+
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--clay);color:var(--paper)}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;position:relative;z-index:1}
+
+  /* ---------- TYPE ---------- */
+  .display{font-family:'Newsreader',serif;font-optical-sizing:auto;font-weight:560;line-height:1.02;letter-spacing:-.015em}
+  .kicker{
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:500;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--clay-deep);
+  }
+  .mono{font-family:'JetBrains Mono',monospace}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(245,239,228,.82);backdrop-filter:blur(12px);
+    border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s;
+  }
+  nav.scrolled{border-bottom:1px solid var(--line);box-shadow:0 1px 0 rgba(0,0,0,.02)}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 40px;height:62px;display:flex;align-items:center;justify-content:space-between}
+  .nav-logo{font-family:'Newsreader',serif;font-weight:600;font-size:19px;letter-spacing:-.01em}
+  .nav-logo b{color:var(--clay)}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{
+    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--muted);transition:color .2s;position:relative;padding:4px 0;
+  }
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a.active{color:var(--clay-deep)}
+  .nav-links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:1.5px;background:var(--clay)}
+  .nav-cta{
+    font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.06em;
+    border:1px solid var(--line-strong);padding:7px 15px;border-radius:var(--r);
+    color:var(--ink);transition:all .2s;
+  }
+  .nav-cta:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  @media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+
+  /* ---------- HERO ---------- */
+  header.hero{padding:150px 0 70px;position:relative}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:0}
+  .avail{display:inline-flex;align-items:center;gap:9px;margin-bottom:30px}
+  .avail .dot{width:8px;height:8px;border-radius:50%;background:var(--clay);box-shadow:0 0 0 0 rgba(44,107,71,.5);animation:pulse 2.6s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(44,107,71,.45)}70%{box-shadow:0 0 0 9px rgba(44,107,71,0)}100%{box-shadow:0 0 0 0 rgba(44,107,71,0)}}
+  .avail span{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+  .hero h1{font-size:clamp(48px,8vw,104px);margin-bottom:8px}
+  .hero h1 .sub{display:block;font-size:clamp(20px,3vw,30px);font-weight:380;font-style:italic;color:var(--ink-soft);letter-spacing:-.01em;margin-top:14px;line-height:1.25}
+  .hero h1 em{font-style:italic;color:var(--clay)}
+  .hero-lede{max-width:680px;font-size:clamp(18px,2.2vw,21px);color:var(--ink-soft);margin-top:34px;line-height:1.62}
+  .hero-lede b{color:var(--ink);font-weight:600}
+
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;align-items:center}
+  .hero-meta a, .hero-meta span{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--muted);display:inline-flex;gap:8px;align-items:center}
+  .hero-meta a{transition:color .2s}.hero-meta a:hover{color:var(--clay)}
+  .hero-meta .sep{color:var(--line-strong)}
+
+  /* metric ribbon */
+  .ribbon{margin-top:64px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr)}
+  .ribbon .m{padding:28px 26px 26px;border-right:1px solid var(--line);position:relative}
+  .ribbon .m:last-child{border-right:none}
+  .ribbon .num{font-family:'Newsreader',serif;font-weight:600;font-size:clamp(30px,4vw,44px);line-height:1;letter-spacing:-.02em;color:var(--ink)}
+  .ribbon .num .u{color:var(--clay);font-size:.62em;vertical-align:super}
+  .ribbon .lbl{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:12px;line-height:1.4}
+  @media(max-width:760px){.ribbon{grid-template-columns:repeat(2,1fr)}.ribbon .m:nth-child(2){border-right:none}.ribbon .m:nth-child(1),.ribbon .m:nth-child(2){border-bottom:1px solid var(--line)}}
+
+  /* ---------- SECTION SCAFFOLD ---------- */
+  section{padding:88px 0;position:relative}
+  .sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:30px;margin-bottom:14px;flex-wrap:wrap}
+  .sec-head h2{font-size:clamp(30px,4.4vw,52px);max-width:760px}
+  .sec-head h2 em{font-style:italic;color:var(--clay)}
+  .sec-idx{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--faint);letter-spacing:.1em}
+  .sec-intro{max-width:660px;color:var(--ink-soft);font-size:18px;margin-top:18px;line-height:1.62}
+  .rule{height:1px;background:var(--line);margin:30px 0 0}
+
+  /* ---------- FEATURED PROJECTS ---------- */
+  .feat{margin-top:54px;border-top:1px solid var(--line-strong)}
+  .proj{
+    display:grid;grid-template-columns:1fr;gap:0;padding:46px 0;border-bottom:1px solid var(--line);
+  }
+  .proj-top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px}
+  @media(max-width:880px){.proj-top{grid-template-columns:1fr;gap:26px}}
+  .proj-no{font-family:'Newsreader',serif;font-size:15px;color:var(--clay);font-weight:600;letter-spacing:.04em}
+  .proj h3{font-family:'Newsreader',serif;font-weight:560;font-size:clamp(26px,3vw,34px);line-height:1.08;letter-spacing:-.015em;margin:14px 0 14px}
+  .proj .type{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--teal);letter-spacing:.04em;margin-bottom:20px;display:block;line-height:1.5}
+  .proj p{color:var(--ink-soft);margin-bottom:16px;line-height:1.6}
+  .proj p b{color:var(--ink);font-weight:600}
+  .impact-tag{
+    display:inline-block;background:var(--paper-2);border:1px solid var(--line-strong);
+    border-left:3px solid var(--clay);padding:13px 16px;border-radius:var(--r);
+    font-size:15px;color:var(--ink);margin-top:6px;line-height:1.45;
+  }
+  .impact-tag b{color:var(--clay-deep)}
+  .micro{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:9px;display:block}
+
+  /* code block */
+  .code{
+    background:var(--code-bg);border-radius:6px;overflow:hidden;
+    box-shadow:0 18px 40px -22px rgba(28,24,19,.6),0 2px 8px -2px rgba(28,24,19,.25);
+    border:1px solid #322a20;
+  }
+  .code-bar{display:flex;align-items:center;gap:7px;padding:11px 15px;background:var(--code-panel);border-bottom:1px solid #322a20}
+  .code-bar .d{width:10px;height:10px;border-radius:50%;background:#3d342a}
+  .code-bar .fn{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--code-dim);margin-left:8px;letter-spacing:.04em}
+  pre{margin:0;padding:18px 18px;overflow-x:auto}
+  pre code{font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.7;color:var(--code-text);white-space:pre}
+  pre code .c{color:var(--code-dim);font-style:italic}
+  pre code .k{color:var(--code-clay)}
+  pre code .s{color:var(--code-green)}
+  pre code .f{color:var(--code-amber)}
+  pre::-webkit-scrollbar{height:8px}
+  pre::-webkit-scrollbar-thumb{background:#3d342a;border-radius:8px}
+
+  .proj-note{margin-top:18px;padding-left:16px;border-left:2px solid var(--line-strong);color:var(--muted);font-size:15px;font-style:italic;line-height:1.55}
+  .proj-note b{color:var(--ink-soft);font-style:normal}
+
+  /* ---------- GRID PROJECTS ---------- */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:54px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .card{background:var(--paper);padding:34px 32px;transition:background .25s}
+  .card:hover{background:var(--panel)}
+  .card .ch{display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+  .card .cno{font-family:'Newsreader',serif;font-size:14px;color:var(--clay);font-weight:600}
+  .card .ctype{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);text-align:right;max-width:160px;line-height:1.4}
+  .card h4{font-family:'Newsreader',serif;font-weight:560;font-size:21px;line-height:1.12;margin:12px 0 12px;letter-spacing:-.01em}
+  .card p{font-size:15px;color:var(--ink-soft);line-height:1.55;margin-bottom:14px}
+  .card .cimpact{font-size:13.5px;color:var(--ink);border-top:1px dashed var(--line-strong);padding-top:13px;line-height:1.5}
+  .card .cimpact b{color:var(--clay-deep)}
+
+  /* ---------- PERSONAL ---------- */
+  .pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:54px}
+  @media(max-width:780px){.pgrid{grid-template-columns:1fr}}
+  .pcard{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:34px 32px;position:relative;overflow:hidden}
+  .pcard::after{content:"";position:absolute;top:0;right:0;width:120px;height:120px;background:radial-gradient(circle at top right,rgba(44,107,71,.08),transparent 70%);pointer-events:none}
+  .pcard .ptag{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay-deep)}
+  .pcard h4{font-family:'Newsreader',serif;font-weight:560;font-size:24px;line-height:1.1;margin:13px 0 7px;letter-spacing:-.01em}
+  .pcard .pmeta{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--teal);margin-bottom:16px;letter-spacing:.02em}
+  .pcard p{font-size:15px;color:var(--ink-soft);line-height:1.58;margin-bottom:12px}
+  .pcard p b{color:var(--ink);font-weight:600}
+  .pcard .pstack{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+  .pchip{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.04em;background:var(--paper-2);border:1px solid var(--line-strong);color:var(--ink-soft);padding:4px 9px;border-radius:20px}
+
+  /* ---------- CAPABILITIES ---------- */
+  .caps{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:54px;border:1px solid var(--line)}
+  @media(max-width:760px){.caps{grid-template-columns:1fr}}
+  .cap{padding:32px 34px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .cap:nth-child(even){border-right:none}
+  .caps .cap:nth-last-child(-n+2){border-bottom:none}
+  @media(max-width:760px){.cap{border-right:none}.caps .cap:nth-last-child(2){border-bottom:1px solid var(--line)}}
+  .cap h5{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--clay-deep);margin-bottom:16px}
+  .cap .items{display:flex;flex-wrap:wrap;gap:8px}
+  .cap .items span{font-size:14px;color:var(--ink-soft);background:var(--panel);border:1px solid var(--line);padding:5px 12px;border-radius:var(--r)}
+
+  /* ---------- THEMES ---------- */
+  .themes{margin-top:54px;display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--line-strong)}
+  .theme{display:grid;grid-template-columns:64px 1fr;gap:30px;padding:34px 0;border-bottom:1px solid var(--line);align-items:start}
+  @media(max-width:680px){.theme{grid-template-columns:1fr;gap:8px}}
+  .theme .tn{font-family:'Newsreader',serif;font-size:34px;font-weight:600;color:var(--clay);line-height:1;font-style:italic}
+  .theme h4{font-family:'Newsreader',serif;font-weight:560;font-size:23px;margin-bottom:8px;letter-spacing:-.01em}
+  .theme p{color:var(--ink-soft);max-width:760px;line-height:1.6}
+  .theme p b{color:var(--ink);font-weight:600}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:90px 0 70px;border-top:1px solid var(--line-strong);margin-top:30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:end}
+  @media(max-width:680px){.foot-grid{grid-template-columns:1fr;gap:30px}}
+  footer h3{font-family:'Newsreader',serif;font-weight:560;font-size:clamp(30px,5vw,46px);line-height:1.05;letter-spacing:-.02em;margin-bottom:18px}
+  footer h3 em{font-style:italic;color:var(--clay)}
+  .foot-links{display:flex;flex-direction:column;gap:11px}
+  .foot-links a{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--ink-soft);display:inline-flex;gap:10px;align-items:center;transition:color .2s;width:fit-content}
+  .foot-links a:hover{color:var(--clay)}
+  .foot-links a .arr{color:var(--clay);transition:transform .2s}
+  .foot-links a:hover .arr{transform:translateX(3px)}
+  .colophon{margin-top:56px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--faint);letter-spacing:.04em;text-transform:uppercase}
+
+  /* ---------- REVEAL ANIM ---------- */
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+  .rv.in{opacity:1;transform:none}
+
+  /* ---------- PRINT ---------- */
+  @media print{
+    body{background:#fff}body::before{display:none}
+    nav,.avail .dot{display:none}.code{box-shadow:none}
+    section{padding:24px 0;break-inside:avoid}
+    .proj,.pcard,.card,.theme{break-inside:avoid}
+    .rv{opacity:1;transform:none}
+    .ribbon .num,.theme .tn{color:#000}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">Salim <b>Salha</b></a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#personal">Personal</a>
+      <a href="#stack">Stack</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div id="top"></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div class="avail rv"><span class="dot"></span><span>AI Operations · Strategy &amp; Systems · Open to senior roles</span></div>
+
+    <h1 class="display rv">
+      I build <em>operating systems</em><br>for go-to-market teams.
+      <span class="sub">A portfolio of the AI tools, agents, skills, and production systems I've built with Claude, at Samsara and on my own time.</span>
+    </h1>
+
+    <p class="hero-lede rv">
+      I'm a <b>Strategy &amp; Operations Manager</b> working across Sales, CS, Product, Data Science, and Engineering at Samsara.
+      For the last two years I've designed, built, and standardized <b>AI-powered workflows</b> inside a
+      ~$1.7B ARR public company, proving each one in production before handing it off. This portfolio collects those builds
+      alongside the ones I've done on my own time.
+    </p>
+
+    <div class="hero-meta rv">
+      <a href="mailto:ssalha96@gmail.com">✉ ssalha96@gmail.com</a>
+      <span class="sep">/</span>
+      <a href="tel:7742193086">☏ (774) 219-3086</a>
+      <span class="sep">/</span>
+      <span>◷ Cambridge, MA</span>
+      <span class="sep">/</span>
+      <span>Samsara · NYSE: IOT</span>
+    </div>
+
+    <div class="ribbon rv">
+      <div class="m"><div class="num">$600<span class="u">M</span></div><div class="lbl">Enterprise ARR<br>operational scope</div></div>
+      <div class="m"><div class="num">$60<span class="u">M+</span></div><div class="lbl">At-risk ACV recovered<br>via AI renewal motion</div></div>
+      <div class="m"><div class="num">500<span class="u">+</span></div><div class="lbl">Exec account briefings<br>automated annually</div></div>
+      <div class="m"><div class="num">~130<span class="u">hrs</span></div><div class="lbl">Recurring manual work<br>removed per year, per agent</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ WORK ============ -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 class="display"><em>AI</em> inside the enterprise</h2>
+      <span class="sec-idx">01 / Samsara</span>
+    </div>
+    <p class="sec-intro rv">
+      AI builds I shipped as a Sales and CS Operations partner to a ~$600M Enterprise org: artifacts, multi-step agents,
+      reusable skills, and production automation. Most followed the same arc of build it, prove it in production, then standardize
+      or hand it off as scope grew. The code shown is the working pattern behind each one.
+    </p>
+
+    <div class="feat">
+
+      <!-- FEATURED 1 -->
+      <article class="proj rv">
+        <div class="proj-top">
+          <div>
+            <span class="proj-no">F.01</span>
+            <h3>Operations Command Center</h3>
+            <span class="type">React artifact orchestrating Jira · Slack · Gmail · Calendar · Granola via MCP + the in-artifact Anthropic API ("Claude-in-Claude")</span>
+            <p>A personal operations cockpit with one-tap buttons for every recurring CS Ops job: morning briefing, weekly status, Confluence docs, BRD creation, Jira ticket drafting, Slack thread summaries, QBR data pulls. Each button calls Claude <b>from inside the artifact</b>, attaches the right MCP servers, gathers live data, and returns a drafted output with a preview-before-send flow.</p>
+            <p>I rebuilt it on <b>useReducer</b> after early versions broke, to fix stale-closure bugs in the async handlers, and added per-step error isolation through a <span class="mono">safeMcp()</span> wrapper so one failed integration doesn't sink the whole run.</p>
+            <div class="impact-tag">Became my daily driver and a template teammates adapted. <b>v8 removed the Atlassian MCP connector entirely</b>, since Samsara's GovCloud Jira/Confluence instance is incompatible with Anthropic integrations under Government Cloud restrictions. All queries reroute through the Glean MCP, which a teammate independently confirmed was more accurate.</div>
+          </div>
+          <div>
+            <span class="micro">// in-artifact API call + type-safe MCP handling</span>
+            <div class="code">
+              <div class="code-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="fn">command-center.jsx</span></div>
+<pre><code><span class="k">async function</span> <span class="f">callClaude</span>(system, prompt, mcp = [], tools = []) {
+  <span class="k">const</span> body = {
+    model: <span class="s">"claude-sonnet-4-20250514"</span>,
+    max_tokens: <span class="s">1000</span>,
+    system, messages: [{ role: <span class="s">"user"</span>, content: prompt }],
+  };
+  <span class="k">if</span> (mcp.length)   body.mcp_servers = mcp;
+  <span class="k">if</span> (tools.length) body.tools = tools;
+  <span class="k">return</span> (<span class="k">await</span> <span class="f">fetch</span>(API_URL, {
+    method: <span class="s">"POST"</span>,
+    headers: { <span class="s">"Content-Type"</span>: <span class="s">"application/json"</span> },
+    body: <span class="f">JSON.stringify</span>(body),
+  })).<span class="f">json</span>();
+}
+
+<span class="c">// extract by block TYPE — never by position; MCP</span>
+<span class="c">// responses interleave text / tool_use / tool_result</span>
+<span class="k">const</span> <span class="f">results</span> = (d) =&gt; (d?.content ?? [])
+  .<span class="f">filter</span>(b =&gt; b.type === <span class="s">"mcp_tool_result"</span>)
+  .<span class="f">map</span>(b =&gt; b.content?.[<span class="s">0</span>]?.text || <span class="s">""</span>);
+
+<span class="c">// per-step isolation: one broken integration ≠ dead run</span>
+<span class="k">async function</span> <span class="f">safeMcp</span>(label, fn) {
+  <span class="k">try</span>  { <span class="k">return</span> { label, ok: <span class="k">true</span>,  data: <span class="k">await</span> <span class="f">fn</span>() }; }
+  <span class="k">catch</span> (e) { <span class="k">return</span> { label, ok: <span class="k">false</span>, error: e.message }; }
+}</code></pre>
+            </div>
+            <div class="proj-note">State runs through useReducer rather than useState to avoid stale closures inside the async MCP handlers, a specific bug I diagnosed and fixed.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- FEATURED 2 -->
+      <article class="proj rv">
+        <div class="proj-top">
+          <div>
+            <span class="proj-no">F.02</span>
+            <h3>Enterprise Account-Assignment Command Center</h3>
+            <span class="type">Interactive HTML dashboard + Claude Project instructions · AI decision-support tool</span>
+            <p>A Claude-powered command center that helps Enterprise CS managers build and rebalance CSM books of business. It surfaces unassigned accounts, current books, open CTAs, transitions, and segment mismatches, then generates <b>draft</b> assignments with explicit rationale: parent-account capacity flags, book volume against service caps, Core $100K+ distribution. Quick-action buttons (Build a BoB, Balance books, Triage unassigned, Check capacity) sit beside copy-to-clipboard links for fresh Gainsight data pulls.</p>
+            <p>It's wrapped in a Claude Project, so a manager types <span class="mono">"open the command center"</span> and Claude renders it live. The manager keeps the final call on every assignment.</p>
+            <div class="impact-tag">Became the <b>primary tool for new-hire account-assignment closeout</b>. Enterprise CS leadership explicitly standardized on this Claude-based process going forward, moving it from a personal tool to an org-endorsed standard.</div>
+          </div>
+          <div>
+            <span class="micro">// the pattern that made it robust in both modes</span>
+            <div class="code">
+              <div class="code-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="fn">safe-send.js</span></div>
+<pre><code><span class="c">// sendPrompt() only exists when Claude RENDERS the</span>
+<span class="c">// HTML as an artifact — not when the file is opened raw.</span>
+<span class="c">// One universal handler so every button works either way:</span>
+<span class="k">function</span> <span class="f">safeSend</span>(text) {
+  <span class="k">if</span> (<span class="k">typeof</span> sendPrompt === <span class="s">"function"</span>) {
+    <span class="f">sendPrompt</span>(text);            <span class="c">// artifact mode → chat</span>
+  } <span class="k">else</span> {
+    navigator.clipboard.<span class="f">writeText</span>(text);
+    <span class="f">showToast</span>(<span class="s">"Copied — paste into chat"</span>);
+  }
+}
+
+<span class="c">// every quick action routes through safeSend()</span>
+<span class="c">// "Build a book for " + nameInput.value  → draft + rationale</span></code></pre>
+            </div>
+            <div class="proj-note"><span class="mono">sendPrompt()</span> only exists when Claude renders the HTML as an artifact, not when the file is opened directly. The fallback keeps every button working in both modes.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- FEATURED 3 -->
+      <article class="proj rv">
+        <div class="proj-top">
+          <div>
+            <span class="proj-no">F.03</span>
+            <h3>Daily Operations Briefing Agent</h3>
+            <span class="type">Multi-step read-only Claude agent, packaged as the <span class="mono">cs-ops-daily-briefing</span> skill · my agent-track capstone</span>
+            <p>A morning agent that pulls from <b>five systems I'd otherwise check by hand</b>: Calendar, Granola, Gmail, Slack, and Glean (including the Security-approved GovCloud Jira path). It filters, de-dupes, prioritizes, and returns one ~2-minute briefing with a draft reply and source link on every item. I invoke it by typing "run my daily briefing."</p>
+            <p>It's designed around two failure modes a naive tool would have. <b>Name ambiguity:</b> a note saying "send to Kristine" gets resolved against sent DMs and the directory, and it correctly disambiguated four Kristines in testing. <b>Nagging about done work:</b> it checks sent Slack and email before listing a task, which in one run cut the to-do list from four items to one.</p>
+            <div class="impact-tag">~30–45 min of daily cross-tool checking collapsed to a ~2-minute read, roughly <b>2+ hrs/week and ~130 hrs/year</b>. It's built for delegation: per-user prompt and config, no shared logins, so a teammate adapts it by swapping one CONFIG block.</div>
+          </div>
+          <div>
+            <span class="micro">// the reusable agent prompt (saved as Project instructions)</span>
+            <div class="code">
+              <div class="code-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="fn">daily-briefing.md</span></div>
+<pre><code><span class="k">## TASK</span> — when I say <span class="s">"run my daily briefing"</span>:
+<span class="s">1.</span> Gather across Calendar, Granola, Gmail, Slack,
+   Glean within the lookback window.
+<span class="s">2.</span> Disambiguate any first-name reference against my
+   sent messages + directory before using a name.
+<span class="s">3.</span> Before listing a task, verify it isn't already
+   done by checking my sent Slack / email.
+<span class="s">4.</span> Prioritize; per item give a one-line why, a
+   draft reply, and a source link.
+<span class="s">5.</span> <span class="k">Grounding rule:</span> only facts you actually
+   fetched. Never invent a date, name, or status.
+   If the briefing is suspiciously short, say so —
+   don't imply "all clear."</code></pre>
+            </div>
+            <div class="proj-note">Strictly read-only, grounded in fetched facts only, with a human in the loop on every action. It drafts; I decide and send.</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- FEATURED 4 -->
+      <article class="proj rv">
+        <div class="proj-top">
+          <div>
+            <span class="proj-no">F.04</span>
+            <h3>Automated Executive Business-Review Scheduling</h3>
+            <span class="type">Gainsight data-design architecture + Rules Engine build · AI-assisted production engineering</span>
+            <p>The rolling Business Review (BR) automation for the Enterprise CS org, internally the <span class="mono">BR CTA Engine v2 / Rolling Assignment Engine</span>. The v2 design computes, per account, the next BR type, days until the next BR, fiscal quarter, workflow status, and eligibility flags. It checks for already-open follow-ups <b>inside the data design itself</b>, which keeps the firing rule a thin, auditable wrapper that schedules renewal and executive review tasks nightly with duplicate prevention built in.</p>
+            <p>It also fixed a diagnosed production bug: Canada "Plus" tier accounts over $100K ARR weren't getting executive reviews because a tier filter silently excluded them. I corrected it in both the firing and forecasting data designs.</p>
+            <div class="impact-tag">Newly-eligible accounts now get the right task <b>within 24 hours</b> of crossing the 180-day threshold, with no duplicates. The cutover resolved an open ticket (CSOP-12444) as a byproduct and absorbed a mid-flight scope change by exclusion rather than rework.</div>
+          </div>
+          <div>
+            <span class="micro">// the firing logic — dedup pushed down into the data layer</span>
+            <div class="code">
+              <div class="code-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="fn">rolling-assignment-engine-v2</span></div>
+<pre><code><span class="k">SOURCE</span>  Data Designer → DD_BR_Rolling_Master
+<span class="k">SCHED</span>   data design 12:00 AM → rule 2:00 AM
+        <span class="c">(dataset must be fresh before the rule runs)</span>
+
+<span class="k">ACTION 1</span> — Fire Renewal BR CTA
+  <span class="k">FILTER</span>  Final_Renewal_BR = 1
+          <span class="k">AND</span> Open_Renewal_CTA_Count <span class="k">is null</span>  <span class="c">// dedup</span>
+  <span class="k">DUE</span>     Upcoming_Renewals
+
+<span class="k">ACTION 2</span> — Fire Exec BR CTA
+  <span class="k">FILTER</span>  (Final_Exec_BR_LastBR = 1
+           <span class="k">OR</span> Final_Exec_BR_Onboarding = 1)
+          <span class="k">AND</span> Open_Exec_CTA_Count <span class="k">is null</span>   <span class="c">// dedup</span>
+
+<span class="k">ROLLOUT</span> build v2 new → verify → deactivate legacy
+        rule  <span class="c">// clean, instant rollback path</span></code></pre>
+            </div>
+            <div class="proj-note">AI-assisted engineering of production automation: architecting and debugging a live nightly system in Gainsight's Rules Engine.</div>
+          </div>
+        </div>
+      </article>
+
+    </div><!--/feat-->
+
+    <div class="sec-head rv" style="margin-top:78px">
+      <h2 class="display" style="font-size:clamp(24px,3vw,32px)">More builds</h2>
+      <span class="sec-idx">eight further shipped projects</span>
+    </div>
+
+    <div class="grid">
+      <div class="card rv">
+        <div class="ch"><span class="cno">05</span><span class="ctype">React + MCP artifact</span></div>
+        <h4>Morning Briefing Generator</h4>
+        <p>The first working build and proof-of-concept: pulls open Jira tickets, unreplied Slack, and unread Gmail, compiles a clean HTML email, and drafts it to the inbox via the Gmail MCP. One tap, no input.</p>
+        <div class="cimpact">Validated the in-artifact API + MCP pattern end-to-end. It evolved directly into the Command Center and the Daily Briefing Agent.</div>
+      </div>
+      <div class="card rv">
+        <div class="ch"><span class="cno">06</span><span class="ctype">Claude Skill</span></div>
+        <h4>Weekly Manager-Update Generator</h4>
+        <p>A skill that converts a raw weekly activity dump into a manager-ready brief: summary grouped by workstream, a stalled-items list with owners and dependency risks, and exactly three direct questions for the 1:1. Output is paste-ready.</p>
+        <div class="cimpact">Turned a recurring 30+ min assemble-and-frame task into a quick review. It was later wired in as a reusable component of the Daily Briefing Agent.</div>
+      </div>
+      <div class="card rv">
+        <div class="ch"><span class="cno">07</span><span class="ctype">In-artifact AI tool</span></div>
+        <h4>Requirements Document Generator</h4>
+        <p>Describe a Gainsight build in plain English; get back a complete <b>14-section Business Requirements Document</b> covering scope, trigger and rule logic, CTA config, playbook tasks, acceptance criteria, and timeline, ready to hand to CS Systems. It fills everything inferable and brackets what needs my input.</p>
+        <div class="cimpact">Standardized the CS Ops → CS Systems handoff artifact and cut requirements-doc drafting to a <b>review-and-fill pass</b>.</div>
+      </div>
+      <div class="card rv">
+        <div class="ch"><span class="cno">08</span><span class="ctype">Reusable prompt / tool</span></div>
+        <h4>Quarterly KPI Analysis & Speaker Notes</h4>
+        <p>Analyzes quarter-over-quarter KPI data by segment, generates per-metric speaker notes, and condenses it all to a 2–4 line executive slide summary for CS leadership. Flags low-volume metrics as statistically unreliable.</p>
+        <div class="cimpact">A repeatable QBR-prep tool catalogued in my CS Ops AI-prompts library; same lineage produced a chat-rendered KPI talk-track.</div>
+      </div>
+      <div class="card rv">
+        <div class="ch"><span class="cno">09</span><span class="ctype">Gainsight dashboard design</span></div>
+        <h4>Enterprise Business-Review Dashboards</h4>
+        <p>A ground-up redesign that respected real platform limits: the CSM (Customer Success Manager) view trimmed from ~22 to a tighter 20 widgets, the manager view reuses those reports via scoped global filters, and an un-buildable pivot concept was replaced with a flat, sortable Team Urgent Action Queue.</p>
+        <div class="cimpact">Buildable dashboards within Gainsight's 30-widget ceiling, down to swapping saturated palettes for the light-fill colors that render readably in the platform.</div>
+      </div>
+      <div class="card rv">
+        <div class="ch"><span class="cno">10</span><span class="ctype">AI research + decision doc</span></div>
+        <h4>Self-Service Business-Review Strategy</h4>
+        <p>A strategic review comparing three operating models for the self-service Business Review motion, landing on a hybrid recommendation, with the specific decisions teed up that make "the requirements doc write itself." Cited Gainsight docs, community threads, peer enterprise patterns, and internal sources.</p>
+        <div class="cimpact">Gave leadership an <b>evidence-backed</b> basis for the motion design, with sourced comparisons behind the recommendation.</div>
+      </div>
+      <div class="card rv">
+        <div class="ch"><span class="cno">11</span><span class="ctype">AI-assisted data build · Python/pandas</span></div>
+        <h4>Template Inventory & Field-Mapping for a Tool Migration</h4>
+        <p>To support a platform deprecation, Claude crawled hundreds of Drive files, cross-referenced a usage CSV to keep only templates with real 2026 usage, narrowed <b>30 to 19</b> with confirmed master links, then mapped which fields are auto-populated vs. manually filled per template.</p>
+        <div class="cimpact">Scoped the migration to real usage data, with the <b>top 7 templates at ~85% of volume</b>, so the team could prioritize what's actually used.</div>
+      </div>
+      <div class="card rv">
+        <div class="ch"><span class="cno">12</span><span class="ctype">AI-assisted .docx synthesis</span></div>
+        <h4>Enterprise Account-Consolidation Business Cases</h4>
+        <p>Seven Tier-1 account business cases for an enterprise hierarchy-consolidation pilot, each built to a leadership-mandated frame (Ideal State → Pain Points → Does consolidation help?) by synthesizing Gainsight CTA + timeline exports, Slack/Glean status, and SFDC/NetSuite data.</p>
+        <div class="cimpact">Became the document that <b>gated CSM validation and the SteerCo opt-in deadline</b>, and surfaced account-specific data like an unresolved billing structure and an in-flight consolidation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PERSONAL ============ -->
+<section id="personal">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 class="display"><em>AI</em> in daily practice</h2>
+      <span class="sec-idx">02 / Personal</span>
+    </div>
+    <p class="sec-intro rv">
+      Projects I've built with Claude on my own time, across things I care about. I use the same tools here that I use at work:
+      React, HTML, structured research, and project systems. They show how I work when the subject is mine to choose.
+    </p>
+
+    <div class="pgrid">
+
+      <div class="pcard rv">
+        <span class="ptag">Interactive HTML build system · project management</span>
+        <h4>"The Clown Tree"</h4>
+        <p class="pmeta">Bioactive vivarium build · Dendrobates leucomelas 2.1 trio · 24×18×36 Exo Terra</p>
+        <p>A full <b>HTML build guide and decision-support doc</b> for a display-grade bioactive vivarium housing a trio of "Clown" dart frogs. It covers drainage and substrate layering, hardscape and false-bottom construction, the planting plan, misting and lighting parameters, and a sequenced build timeline from build start through planted cycle to animal introduction.</p>
+        <p>Backed by about ten years of herpetoculture, with every purchase and species decision documented against the plan as the build progresses in real time.</p>
+        <div class="pstack"><span class="pchip">HTML guide</span><span class="pchip">Build timeline</span><span class="pchip">Spec-driven decisions</span><span class="pchip">Domain depth</span></div>
+      </div>
+
+      <div class="pcard rv">
+        <span class="ptag">React artifact · data-driven program</span>
+        <h4>Summer Shred 2026</h4>
+        <p class="pmeta">Interactive fitness dashboard + structured body-recomposition program</p>
+        <p>An <b>interactive React dashboard</b> I built and refined over several iterations to run a structured fat-loss program: a 5-day upper/lower training split, macro tracking, and a weekly accountability cadence, all in one place that tracks and visualizes progress over months.</p>
+        <p>It sits on top of a written training and behavior-change plan, so the program defines the targets and the dashboard tracks them.</p>
+        <div class="pstack"><span class="pchip">React</span><span class="pchip">Iterative refinement</span><span class="pchip">Tracking + viz</span><span class="pchip">Systems design</span></div>
+      </div>
+
+      <div class="pcard rv">
+        <span class="ptag">Large-scale research synthesis · structured planning</span>
+        <h4>Boston Events &amp; Experiences Calendar</h4>
+        <p class="pmeta">A researched Jun–Dec 2026 calendar of things to do</p>
+        <p>A <b>seven-month structured calendar</b> of concerts, food festivals, vintage markets, World Cup matches, Red Sox games, foliage trips, and a Cape Cod getaway, synthesized from scattered sources into one organized, decision-ready plan built around real interests and constraints.</p>
+        <p>Built with the same research-synthesis approach as my work decision docs, pulling a wide, unstructured space into a single organized artifact I can act on.</p>
+        <div class="pstack"><span class="pchip">Research synthesis</span><span class="pchip">Structured output</span><span class="pchip">Planning system</span></div>
+      </div>
+
+      <div class="pcard rv">
+        <span class="ptag">Applied strategy · personal venture</span>
+        <h4>Independent CS-Ops Practice: Strategy</h4>
+        <p class="pmeta">Turning enterprise AI/ops expertise into an offer</p>
+        <p>Using Claude as a thinking partner, I worked through the strategy for an independent practice built on my day-job expertise: <b>fractional Gainsight consulting, CS-Ops templates, Matik implementation work, and thought leadership</b>. I evaluated positioning, productization, and demand the same way I'd approach a GTM problem at work.</p>
+        <div class="pstack"><span class="pchip">GTM thinking</span><span class="pchip">Productization</span><span class="pchip">Positioning</span><span class="pchip">Self-directed</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ STACK ============ -->
+<section id="stack">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 class="display">The <em>stack</em> behind the builds</h2>
+      <span class="sec-idx">03 / Capabilities</span>
+    </div>
+    <p class="sec-intro rv">What I use, across AI tooling, the business systems I operate, and the strategy work it supports.</p>
+
+    <div class="caps">
+      <div class="cap rv">
+        <h5>AI &amp; Automation</h5>
+        <div class="items">
+          <span>Claude artifacts (React + HTML)</span><span>In-artifact Anthropic API ("Claude-in-Claude")</span><span>Claude Skills</span><span>Multi-step agents</span><span>MCP connectors</span><span>Prompt engineering</span><span>LLM workflow design</span><span>AI operations</span>
+        </div>
+      </div>
+      <div class="cap rv">
+        <h5>Build &amp; Integrate</h5>
+        <div class="items">
+          <span>React (useReducer / async state)</span><span>HTML / CSS / JS</span><span>Python · pandas</span><span>docx generation</span><span>Slack · Gmail · Calendar · Granola · Glean MCP</span><span>Google Drive crawl + synthesis</span><span>Production debugging</span>
+        </div>
+      </div>
+      <div class="cap rv">
+        <h5>Business Systems</h5>
+        <div class="items">
+          <span>Salesforce</span><span>Gainsight (admin &amp; architecture)</span><span>Tableau</span><span>Databricks</span><span>SQL</span><span>Matik</span><span>Excel</span><span>Jira / Confluence</span>
+        </div>
+      </div>
+      <div class="cap rv">
+        <h5>Strategy &amp; Operations</h5>
+        <div class="items">
+          <span>GTM strategy</span><span>Revenue operations</span><span>Annual planning</span><span>Forecasting</span><span>Segmentation &amp; capacity modeling</span><span>KPI development</span><span>Executive reporting</span><span>Cross-functional program leadership</span><span>Team management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPROACH ============ -->
+<section id="approach">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2 class="display">How I <em>work</em></h2>
+      <span class="sec-idx">04 / Principles</span>
+    </div>
+    <p class="sec-intro rv">Four patterns run through most of the projects above.</p>
+
+    <div class="themes">
+      <div class="theme rv">
+        <div class="tn">01</div>
+        <div>
+          <h4>Build, prove, then standardize or hand off</h4>
+          <p>Most projects followed the same arc: <b>build the internal AI tooling, validate it in production, then standardize it</b> or hand it off as scope grew. The Account Assignment Command Center became an org standard. The Matik admin work and briefing skills were built to pass cleanly to other owners.</p>
+        </div>
+      </div>
+      <div class="theme rv">
+        <div class="tn">02</div>
+        <div>
+          <h4>Engineering under real constraints</h4>
+          <p>I work within the actual limits. I rerouted Jira/Confluence queries off a <b>GovCloud-incompatible connector</b> to the Glean MCP, respected Gainsight's real feature ceilings instead of speccing builds the platform can't support, fixed stale-closure bugs with useReducer, and isolated integration failures with a <span class="mono">safeMcp()</span> wrapper.</p>
+        </div>
+      </div>
+      <div class="theme rv">
+        <div class="tn">03</div>
+        <div>
+          <h4>Trust by design</h4>
+          <p>Read-only agents. Grounding rules that allow <b>only facts the system actually fetched</b>, with no invented names or dates. Name disambiguation, checks for work already done, and a human in the loop throughout, where every recommendation is a draft and the person owns the call.</p>
+        </div>
+      </div>
+      <div class="theme rv">
+        <div class="tn">04</div>
+        <div>
+          <h4>Quantified where it counts</h4>
+          <p>$60M+ at-risk ACV recovered. 500+ exec briefings automated. A daily agent worth ~130 hrs/year. A migration scoped from 30 to 19 templates, with the top 7 at ~85% of volume. <b>I measure each build and report it as it is</b>, including the cases where the result is qualitative, like leadership standardizing on a tool.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="rv">
+        <h3 class="display">Get in <em>touch</em>.</h3>
+        <p style="color:var(--ink-soft);max-width:520px">I'm looking for senior strategy, operations, and AI-systems roles where building and proving real tooling is central to the work. If that's what you're hiring for, I'd like to hear from you.</p>
+      </div>
+      <div class="foot-links rv">
+        <a href="mailto:ssalha96@gmail.com"><span class="arr">→</span> ssalha96@gmail.com</a>
+        <a href="tel:7742193086"><span class="arr">→</span> (774) 219-3086</a>
+        <a href="#top"><span class="arr">→</span> Back to top</a>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>Salim Salha · AI Project Portfolio</span>
+      <span>B.A. Economics &amp; Philosophy · UMass Boston Honors, Magna Cum Laude</span>
+      <span id="year"></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // sticky nav state
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach((e,i)=>{
+      if(e.isIntersecting){
+        const sibs = Array.from(e.target.parentElement.children).filter(c=>c.classList.contains('rv'));
+        const idx = sibs.indexOf(e.target);
+        e.target.style.transitionDelay = Math.min(idx,5)*70 + 'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+  // active nav link
+  const sections = ['work','personal','stack','approach','contact'];
+  const links = {};
+  document.querySelectorAll('.nav-links a').forEach(a=>{
+    const h=a.getAttribute('href'); if(h && h.startsWith('#')) links[h.slice(1)]=a;
+  });
+  const spy = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        Object.values(links).forEach(l=>l.classList.remove('active'));
+        const id = e.target.id; if(links[id]) links[id].classList.add('active');
+      }
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  sections.forEach(id=>{const el=document.getElementById(id); if(el) spy.observe(el);});
+
+  document.getElementById('year').textContent = '© ' + new Date().getFullYear();
+</script>
+</body>
+</html>
