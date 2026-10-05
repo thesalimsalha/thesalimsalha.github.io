@@ -5,20 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <title>Salim Salha · CS Operations &amp; Strategy · AI Systems</title>
-<meta name="description" content="Portfolio of AI tools, agents, and production automation built for a US Enterprise Success organization — built, proven in production, then handed off.">
+<meta name="description" content="Portfolio of ten AI tools, agents, and production automation systems built for a US Enterprise Success organization — built, proven in production, then handed off.">
 <link rel="canonical" href="https://thesalimsalha.github.io/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230E1A21'/%3E%3Ctext x='32' y='45' font-family='Helvetica,Arial' font-size='40' font-weight='700' fill='%23E0A340' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Salim Salha">
 <meta property="og:url" content="https://thesalimsalha.github.io/">
 <meta property="og:title" content="Salim Salha — CS Operations &amp; Strategy · AI Systems">
-<meta property="og:description" content="Sole operations partner to a US Enterprise Success organization: ~1,700 accounts, 11 front-line managers, 2 directors. Seven production AI systems, built and proven in production.">
+<meta property="og:description" content="Sole operations partner to a US Enterprise Success organization: ~1,700 accounts, 11 front-line managers, 2 directors. Ten production AI systems, built and proven in production.">
 <meta property="og:image" content="https://thesalimsalha.github.io/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Salim Salha — CS Operations &amp; Strategy · AI Systems">
-<meta name="twitter:description" content="Seven production AI systems built for a US Enterprise Success organization of ~1,700 accounts.">
+<meta name="twitter:description" content="Ten production AI systems built for a US Enterprise Success organization of ~1,700 accounts.">
 <meta name="twitter:image" content="https://thesalimsalha.github.io/og-card.png">
 <script type="application/ld+json">
 {
@@ -75,6 +75,7 @@
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
+  [hidden]{display:none!important}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:80px}
   body{
     background:var(--paper);color:var(--text);
@@ -204,6 +205,7 @@
     display:grid;grid-template-columns:var(--rail) 1fr;gap:20px;
     padding:40px 0;border-bottom:1px solid var(--line);
   }
+  .entry > div{min-width:0}
   @media(max-width:840px){.entry{grid-template-columns:1fr;gap:22px;padding:32px 0}}
   .entry-rail{position:sticky;top:82px;align-self:start}
   @media(max-width:840px){.entry-rail{position:static}}
@@ -216,7 +218,7 @@
     display:grid;grid-template-columns:1fr;gap:2px;padding:9px 0;border-bottom:1px solid var(--line);
   }
   .spec dt{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3)}
-  .spec dd{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text);line-height:1.45}
+  .spec dd{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--text);line-height:1.45;overflow-wrap:anywhere}
   .spec dd.ok{color:var(--ok)}
   .spec dd.flag{color:var(--flag)}
   @media(max-width:840px){
@@ -231,6 +233,7 @@
   }
   .entry p{color:var(--text-2);margin-bottom:15px;max-width:74ch}
   .entry p b{color:var(--text);font-weight:600}
+  .entry p a{color:var(--brass);border-bottom:1px solid var(--line-2)}
   .outcome{
     margin-top:20px;background:var(--surface);border:1px solid var(--line);
     border-left:3px solid var(--brass);padding:16px 18px;max-width:74ch;
@@ -274,6 +277,7 @@
   details.fold[open] summary::before{content:"–"}
   details.fold[open] summary{margin-bottom:10px}
   .code{background:var(--code-bg);border:1px solid #1b2a32;overflow:hidden}
+  .code + .code{margin-top:14px}
   .code-bar{
     display:flex;align-items:center;justify-content:space-between;gap:12px;
     padding:9px 14px;background:#101d24;border-bottom:1px solid #1b2a32;
@@ -289,7 +293,7 @@
   pre::-webkit-scrollbar{height:7px}
   pre::-webkit-scrollbar-thumb{background:#2a3d47}
 
-  /* ——— gate diagram (F.05 signature graphic) ——— */
+  /* ——— gate diagram (F.08 signature graphic) ——— */
   .gate{margin-top:24px;max-width:74ch;background:var(--surface);border:1px solid var(--line);padding:22px}
   .gate .lbl{color:var(--text-3);display:block;margin-bottom:18px}
   .gate-track{display:grid;grid-template-columns:73fr 27fr;height:44px;border:1px solid var(--line-2)}
@@ -308,7 +312,7 @@
   .gate-axis .cut{color:var(--flag)}
   @media(max-width:560px){.gate-legend{grid-template-columns:1fr;gap:10px}}
 
-  /* ——— timeline (F.06) ——— */
+  /* ——— timeline (F.09) ——— */
   .tline{margin-top:24px;max-width:74ch;border-top:1px solid var(--line-2)}
   .tline .ev{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:14px 0;border-bottom:1px solid var(--line)}
   @media(max-width:640px){.tline .ev{grid-template-columns:1fr;gap:4px}}
@@ -366,12 +370,16 @@
 
   /* ——— governance ——— */
   .gov{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink-line);border:1px solid var(--ink-line)}
-  @media(max-width:880px){.gov{grid-template-columns:1fr}}
+  .gov--2{grid-template-columns:repeat(2,1fr);margin-top:28px}
+  @media(max-width:880px){.gov,.gov--2{grid-template-columns:1fr}}
   .gcell{background:var(--ink-2);padding:28px 26px}
   .gcell .lbl{color:var(--brass-lit);display:block;margin-bottom:14px}
   .gcell h4{font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 108,'wght' 600;font-size:20px;line-height:1.15;letter-spacing:-.012em;margin-bottom:11px;color:#fff}
   .gcell p{font-size:15px;color:var(--on-ink-dim);line-height:1.6}
+  .gcell p + p{margin-top:11px}
   .gcell p b{color:var(--on-ink);font-weight:600}
+  .gov-status{margin-top:36px;max-width:74ch;color:var(--on-ink-dim);font-size:17px;line-height:1.65}
+  .gov-status b{color:#fff;font-weight:600}
   .gov-close{
     margin-top:32px;padding-left:24px;border-left:2px solid var(--brass-lit);
     font-family:'Archivo',sans-serif;font-variation-settings:'wdth' 104,'wght' 400;
@@ -453,7 +461,7 @@
     body,.band-ink{background:#fff!important;color:#000!important}
     .rail-top,#lb{display:none!important}
     .hero{padding-top:0}
-    .band-ink .sec-head .intro,.prow p,.gcell p,.hero-sub,.hero-lede{color:#333!important}
+    .band-ink .sec-head .intro,.prow p,.gcell p,.hero-sub,.hero-lede,.gov-status{color:#333!important}
     .gcell,.idx .t,.gov-close,.prow h4,footer h3,.rail-name{color:#000!important}
     .idx a{border-color:#ccc!important}
     .gov,.gcell,.pcard,.col{background:#fff!important;border-color:#ccc!important}
@@ -524,14 +532,17 @@
     </div>
 
     <div class="idx rv">
-      <span class="idx-h lbl">Seven production systems</span>
-      <a href="#f01"><span class="n">F.01</span><span class="t">Enterprise Renewal-Driver Analysis</span><span class="d">Reset the renewal metric a ~1,700-account segment reports on</span></a>
-      <a href="#f02"><span class="n">F.02</span><span class="t">Operations Command Center</span><span class="d">React artifact · MCP orchestration · Claude-in-Claude</span></a>
-      <a href="#f03"><span class="n">F.03</span><span class="t">Account-Assignment Command Center</span><span class="d">Governs account distribution across the segment's books</span></a>
-      <a href="#f04"><span class="n">F.04</span><span class="t">Stakeholder Briefing Agents + Generator</span><span class="d">Live across Customer Success, Implementation Services, and Sales</span></a>
-      <a href="#f05"><span class="n">F.05</span><span class="t">Business-Review Scheduling</span><span class="d">Nightly across ~1,700 accounts · incident, fix, verification</span></a>
-      <a href="#f06"><span class="n">F.06</span><span class="t">Upstream Field-Change Forensics</span><span class="d">A two-task bug that reached every trigger in the book</span></a>
-      <a href="#f07"><span class="n">F.07</span><span class="t">Brand Relaunch, Every Customer-Facing Template</span><span class="d">Company-wide, on the public launch date, bindings intact</span></a>
+      <span class="idx-h lbl">Ten production systems</span>
+      <a href="#f01"><span class="n">F.01</span><span class="t">Account-Assignment Workbench</span><span class="d">Capacity, fit and complexity checks · 132 moves · Enterprise + Mid-Market</span></a>
+      <a href="#f02"><span class="n">F.02</span><span class="t">Renewal Review Workbench</span><span class="d">~6,200 renewals · CS and Renewals on one surface</span></a>
+      <a href="#f03"><span class="n">F.03</span><span class="t">Enterprise KPI Command Center</span><span class="d">One dated snapshot · the accounts behind every number</span></a>
+      <a href="#f04"><span class="n">F.04</span><span class="t">CS Carve Studio</span><span class="d">Annual book carve · scenarios and auto-balance · run with RevOps</span></a>
+      <a href="#f05"><span class="n">F.05</span><span class="t">Stakeholder Briefing Agents + Generator</span><span class="d">Live across Customer Success, Implementation Services, and Sales</span></a>
+      <a href="#f06"><span class="n">F.06</span><span class="t">Enterprise Renewal-Driver Analysis</span><span class="d">Reset the renewal metric a ~1,700-account segment reports on</span></a>
+      <a href="#f07"><span class="n">F.07</span><span class="t">Operations Command Center</span><span class="d">React artifact · MCP orchestration · Claude-in-Claude</span></a>
+      <a href="#f08"><span class="n">F.08</span><span class="t">Business-Review Scheduling</span><span class="d">Nightly across ~1,700 accounts · incident, fix, verification</span></a>
+      <a href="#f09"><span class="n">F.09</span><span class="t">Upstream Field-Change Forensics</span><span class="d">A two-task bug that reached every trigger in the book</span></a>
+      <a href="#f10"><span class="n">F.10</span><span class="t">Brand Relaunch, Every Customer-Facing Template</span><span class="d">Company-wide, on the public launch date, bindings intact</span></a>
     </div>
   </header>
 </div>
@@ -544,12 +555,14 @@
     <div>
       <h2 class="dsp">AI inside the enterprise</h2>
       <p class="intro">
-        Seven systems carrying real load for a US Enterprise Success organization — 13 leaders, roughly 1,700 accounts —
-        with two now running well beyond it: a briefing-agent generator live across three organizations, and a brand
-        relaunch executed across every customer-facing template at the company. Artifacts, multi-step agents, reusable skills,
-        production automation, and the incident work that comes with running any of it for real. Most followed the same arc —
-        build it, prove it in production, then standardize it or hand it off as scope grew.
-        Figures marked <b>Est.</b> are my own unit estimates, derived from stated inputs rather than measured — and stated as
+        Ten systems carrying real load for a US Enterprise Success organization of 13 leaders and roughly 1,700 accounts.
+        Several now run well beyond it. The renewal review workbench spans Enterprise, Frontiers (Canada, EMEA, Mexico),
+        Public Sector, Scale, and a Renewals sales team. The assignment workbench extended to Mid-Market. The carve studio is
+        configured for every CS territory and used jointly with RevOps and Sales Planning. The briefing-agent generator runs
+        across three organizations, and the brand relaunch covered every customer-facing template at the company.
+        Artifacts, multi-step agents, reusable skills, production automation, and the incident work that comes with running any
+        of it for real. Most followed the same arc: build it, prove it in production, then standardize it or hand it off as scope grew.
+        Figures marked <b>Est.</b> are my own unit estimates, derived from stated inputs rather than measured, and stated as
         per-document or per-cycle rates rather than annual totals, because annual totals invite double-counting.
       </p>
     </div>
@@ -560,142 +573,42 @@
     <div class="entry-rail">
       <span class="eid">F.01</span>
       <dl class="spec">
-        <div><dt>State</dt><dd>Completed study · FY27 input</dd></div>
-        <div><dt>Method</dt><dd>Size-controlled logit</dd></div>
-        <div><dt>Survived controls</dt><dd class="ok">2 of ~8 drivers</dd></div>
-        <div><dt>Sample</dt><dd>~1,000 renewals / 2 yrs</dd></div>
-        <div><dt>Changed</dt><dd class="ok">Segment-wide metric</dd></div>
-        <div><dt>Claim</dt><dd>Predictive, not causal</dd></div>
+        <div><dt>State</dt><dd class="ok">Live · Enterprise + Mid-Market</dd></div>
+        <div><dt>Users</dt><dd>7 managers + Mid-Market leadership</dd></div>
+        <div><dt>Moves processed</dt><dd class="ok">132 and counting</dd></div>
+        <div><dt>Load</dt><dd>~15 sec (Enterprise book)</dd></div>
+        <div><dt>Complexity model</dt><dd>6-dimension weighted score</dd></div>
+        <div><dt>Execution</dt><dd>Approved batch → platform of record</dd></div>
       </dl>
     </div>
     <div>
-      <h3 class="dsp-2">Enterprise Renewal-Driver Analysis</h3>
-      <span class="kind">Agentic Claude workflow wired to Salesforce · Databricks · Gainsight · Glean → size-controlled logistic regression → director-ready executive report</span>
-      <p>An end-to-end renewal-driver study run as a single agentic workflow. Claude pulled roughly 1,000 Enterprise renewal events across two years live from Salesforce, Databricks, and Gainsight, synthesized internal context through Glean, ran the statistics, and rendered a brand-matched executive report — a pipeline that would traditionally take an analyst, BizOps, and a designer.</p>
-      <p>The core is a <b>size-controlled logistic regression</b>: it isolated the <b>two activities</b> that stay predictive of renewal after controlling for account size, segment, and tenure — against a set of commonly assumed drivers that did not survive controls. I held the line on rigor throughout — reporting findings as <b>predictive after controls</b>, not causal, and reconciling to the certified rate rather than a convenient number.</p>
-
-      <div class="codewrap">
-        <details class="fold">
-          <summary>View implementation</summary>
-          <div class="code">
-            <div class="code-bar"><span class="fn">renewal-driver-analysis.py</span><span class="tick"></span></div>
-<pre><code><span class="k">import</span> statsmodels.formula.api <span class="k">as</span> smf
-
-<span class="c"># ~1,000 Enterprise renewals, 2 yrs — pulled live across</span>
-<span class="c"># Salesforce + Databricks + Gainsight by the agent</span>
-df = <span class="f">load_renewals</span>(systems=[<span class="s">"sfdc"</span>, <span class="s">"databricks"</span>, <span class="s">"gainsight"</span>])
-
-<span class="c"># which activities stay predictive of renewal AFTER</span>
-<span class="c"># controlling for account size, segment, tenure?</span>
-model = smf.<span class="f">logit</span>(
-    <span class="s">"renewed ~ exec_engagement + qbr_cadence + support_health"</span>
-    <span class="s">"  + onboarding_score + ...        # ~8 assumed drivers"</span>
-    <span class="s">"  + C(segment) + np.log(arr) + tenure_years"</span>,  <span class="c"># controls</span>
-    data=df,
-).<span class="f">fit</span>(disp=<span class="k">False</span>)
-
-<span class="c"># keep only drivers significant after controls — the signal</span>
-signal = model.pvalues[model.pvalues &lt; <span class="s">0.05</span>].index.<span class="f">tolist</span>()</code></pre>
-          </div>
-        </details>
-      </div>
-
-      <div class="outcome">
-        <span class="lbl">Outcome</span>
-        <p>Reconciled <b>the renewal metric an entire ~1,700-account segment reports on</b> to the certified Finance/BizOps rate, closing a long-standing reporting gap, and identified a pool of renewals not covered by any motion. Delivered as a director-ready report and a CS×Renewals operating-model proposal to inform FY27 Enterprise renewal strategy.</p>
-        <p class="est"><i>Est.</i> Work that would conventionally take an analyst, a BizOps partner, and a designer several weeks, run as one workflow. The uncovered-renewal pool is scope identified — no revenue outcome is claimed for it.</p>
-      </div>
-      <div class="note">Correlational with controls, reported as "predictive after controlling for…" — never causal. <b>The certified Finance rate is the source of truth</b>, not a convenient number.</div>
-    </div>
-  </article>
-
-  <!-- F.02 -->
-  <article class="entry rv" id="f02">
-    <div class="entry-rail">
-      <span class="eid">F.02</span>
-      <dl class="spec">
-        <div><dt>State</dt><dd>Absorbed · scheduled tasks</dd></div>
-        <div><dt>Surface</dt><dd>React artifact · v8 final</dd></div>
-        <div><dt>Integrations</dt><dd>5 systems via MCP</dd></div>
-        <div><dt>Failure mode</dt><dd>Isolated per step</dd></div>
-      </dl>
-    </div>
-    <div>
-      <h3 class="dsp-2">Operations Command Center</h3>
-      <span class="kind">React artifact orchestrating MCP connectors + the in-artifact Anthropic API ("Claude-in-Claude")</span>
-      <p>A personal operations cockpit with one-tap buttons for every recurring CS Ops job: morning briefing, weekly status, Confluence docs, BRD creation, Jira ticket drafting, Slack thread summaries, QBR data pulls. Each button calls Claude <b>from inside the artifact</b>, attaches the right MCP servers, gathers live data, and returns a drafted output with a preview-before-send flow.</p>
-      <p>I rebuilt it on <b>useReducer</b> after early versions broke, to fix stale-closure bugs in the async handlers, and added per-step error isolation through a <span class="mono">safeMcp()</span> wrapper so one failed integration doesn't sink the whole run.</p>
-
-      <div class="codewrap">
-        <details class="fold">
-          <summary>View implementation</summary>
-          <div class="code">
-            <div class="code-bar"><span class="fn">command-center.jsx</span><span class="tick"></span></div>
-<pre><code><span class="k">async function</span> <span class="f">callClaude</span>(system, prompt, mcp = [], tools = []) {
-  <span class="k">const</span> body = {
-    model: <span class="s">"claude-sonnet-4-20250514"</span>,
-    max_tokens: <span class="s">1000</span>,
-    system, messages: [{ role: <span class="s">"user"</span>, content: prompt }],
-  };
-  <span class="k">if</span> (mcp.length)   body.mcp_servers = mcp;
-  <span class="k">if</span> (tools.length) body.tools = tools;
-  <span class="k">return</span> (<span class="k">await</span> <span class="f">fetch</span>(API_URL, {
-    method: <span class="s">"POST"</span>,
-    headers: { <span class="s">"Content-Type"</span>: <span class="s">"application/json"</span> },
-    body: <span class="f">JSON.stringify</span>(body),
-  })).<span class="f">json</span>();
-}
-
-<span class="c">// extract by block TYPE — never by position; MCP</span>
-<span class="c">// responses interleave text / tool_use / tool_result</span>
-<span class="k">const</span> <span class="f">results</span> = (d) =&gt; (d?.content ?? [])
-  .<span class="f">filter</span>(b =&gt; b.type === <span class="s">"mcp_tool_result"</span>)
-  .<span class="f">map</span>(b =&gt; b.content?.[<span class="s">0</span>]?.text || <span class="s">""</span>);
-
-<span class="c">// per-step isolation: one broken integration ≠ dead run</span>
-<span class="k">async function</span> <span class="f">safeMcp</span>(label, fn) {
-  <span class="k">try</span>  { <span class="k">return</span> { label, ok: <span class="k">true</span>,  data: <span class="k">await</span> <span class="f">fn</span>() }; }
-  <span class="k">catch</span> (e) { <span class="k">return</span> { label, ok: <span class="k">false</span>, error: e.message }; }
-}</code></pre>
-          </div>
-        </details>
-      </div>
-
-      <div class="outcome">
-        <span class="lbl">Outcome</span>
-        <p>Became my daily driver and a template teammates adapted. Its recurring jobs have since moved onto scheduled tasks — the artifact proved which jobs were worth automating, and then stopped being the surface they run on. v8 removed the Atlassian MCP connector entirely: the ticketing and wiki instance sits in a government-cloud environment that third-party integrations can't reach. All queries reroute through the Glean MCP, which a teammate independently confirmed was more accurate.</p>
-      </div>
-
-      <div class="shots">
-        <figure class="shot shot--sm"><div class="shot-bar"><span>command center · live artifact</span></div><img loading="lazy" decoding="async" src="command-center.webp" alt="Operations Command Center artifact"></figure>
-        <span class="shot-hint">Click any screenshot to enlarge</span>
-      </div>
-    </div>
-  </article>
-
-  <!-- F.03 -->
-  <article class="entry rv" id="f03">
-    <div class="entry-rail">
-      <span class="eid">F.03</span>
-      <dl class="spec">
-        <div><dt>State</dt><dd class="ok">Rolled out · 7 managers</dd></div>
-        <div><dt>Access</dt><dd>Shared project, view-level</dd></div>
-        <div><dt>Governs</dt><dd>~1,700 accounts</dd></div>
-        <div><dt>Source of truth</dt><dd>HR system → warehouse</dd></div>
-        <div><dt>Sponsor</dt><dd>Segment director</dd></div>
-      </dl>
-    </div>
-    <div>
-      <h3 class="dsp-2">Account-Assignment Command Center</h3>
-      <span class="kind">Interactive HTML dashboard + shared, permissioned Claude Project · AI decision-support tool deployed to seven managers</span>
-      <p>A Claude-powered command center that governs how <b>~1,700 enterprise accounts get distributed across the segment's books of business</b> — the tool Enterprise CS managers use to build and rebalance. It surfaces unassigned accounts, current books, open CTAs, transitions, and segment mismatches, then generates <b>draft</b> assignments with explicit rationale: parent-account capacity flags, book volume against service caps, and distribution of the highest-value accounts. A manager types <span class="mono">"open the command center"</span> and Claude renders it live. The manager keeps the final call on every assignment.</p>
+      <h3 class="dsp-2">Account-Assignment Workbench</h3>
+      <span class="kind">Live artifact on each user's own connectors · capacity, fit and complexity checks · approved batches instead of one-by-one edits</span>
+      <p>Account moves between CSMs used to be assembled by hand in spreadsheets, then executed one account at a time in the CS platform so transition tasks fired. Nothing checked whether the receiving CSM was over capacity, whether the account matched the CSM's segment or region, whether a parent/child family was being split, or whether the account had already been passed around. A coverage-model transition earlier in the year surfaced <b>roughly twice the accounts that had been planned for</b>. A shared, live view of the book is what closes that gap.</p>
+      <p><b>The whole workflow runs in one place.</b> Load a segment and pull shared roster status: leave, departing, hold, new hire, partial capacity. Pick a job: a new book for a new CSM or open req, reassign a departing or on-leave CSM, rebalance a team, or place accounts graduating from onboarding. Or describe the move in plain English, or paste a list. The tool ranks candidate CSMs by sales-pod alignment, capacity, complexity, region, language, and business-review load by quarter. Capacity is two checks, not one: <b>parent-account cap and ARR cap are judged independently</b>, because a CSM can have ARR headroom and still be at their account limit. The manager stages, overrides, and approves. Approved moves publish to a shared moves feed and go to Ops as one packet. Bulk moves export for the systems team, skip per-account tasks, and notify each receiving CSM directly.</p>
+      <p><b>Integrity queues find problems before they become misfired tasks</b>: segment mismatches, region misalignment, accounts held by inactive or off-roster CSMs, CSM ownership disagreeing between the CS platform and the CRM, manager drift between the CS platform and the HR system, families split across CSMs, high-value accounts with no executive sponsor, stale engagement, temporary assignments past their return date, and accounts reassigned two or more times in 12 months.</p>
+      <p>Complexity comes from a segment director's account-load model, which I implemented: six weighted dimensions on a ~100-point scale (value tier 25, hierarchy depth 20, lifecycle stage 20, expansion potential 15, product breadth 10, health and risk 10), tiered High, Medium, and Low. <b>The weights are a first pass</b> and have not been validated against CSM time data.</p>
+      <p><b>Mid-Market asked for it, and got it in under a week</b>, built from the segment's requirements doc: ARR bands, pooled coverage below a threshold treated as correct by design rather than flagged as a gap, per-person caps that follow the person rather than the segment, and a churn guard that refuses to stage an account already passed around too many times unless a manager overrides it.</p>
       <p><b>Rebuilt on an authoritative roster rather than inference.</b> Earlier versions inferred each CSM's service tier from account data. The rebuild pulls it from the HR system of record, surfaced through the data warehouse, as the single source of truth. That fixed three cascading errors at once — tier was being inferred incorrectly, inactive CSMs were inflating apparent capacity, and new hires with zero accounts were invisible to the tool entirely, which is exactly the population a capacity view exists to surface.</p>
       <p><b>Going multi-user surfaced a class of problem single-user tools never hit.</b> Rolled out to seven managers as a shared project at view-level permission — not a file passed around — which meant each user's environment had to be validated independently rather than assumed. Environment parity, warehouse read access, and connector configuration all had to be resolved at the group level rather than patched per person, and one shared dependency was replaced with a direct query path so the tool didn't rest on it.</p>
-      <p>Multi-user deployment turned out to be a <b>permissions and environment problem</b> rather than a distribution one.</p>
+      <p>Multi-user deployment turned out to be a <b>permissions and environment problem</b> rather than a distribution one. That lesson drove the next move: <b>from a shared Claude project to a published artifact that runs on each viewer's own connectors</b> (CS platform, CRM, Drive, Slack, email), so access and permissions are per user rather than borrowed from the builder.</p>
 
       <div class="codewrap">
         <details class="fold">
           <summary>View implementation</summary>
+          <div class="code">
+            <div class="code-bar"><span class="fn">capacity.js</span><span class="tick"></span></div>
+<pre><code><span class="c">// Parent-account count and ARR are judged INDEPENDENTLY.</span>
+<span class="c">// A CSM can have ARR headroom and still be full on accounts.</span>
+<span class="k">function</span> <span class="f">capacityFlags</span>(csm, cap) {
+  <span class="k">return</span> {
+    overAccounts: csm.parentAccounts &gt; cap.accounts * csm.capacityPct,
+    overArr:      csm.bookArr        &gt; cap.arr      * csm.capacityPct,
+  };
+}
+<span class="c">// Candidates rank by: AE-pod alignment → capacity → complexity</span>
+<span class="c">// → region → language → BR load in that account's review quarter.</span></code></pre>
+          </div>
           <div class="code">
             <div class="code-bar"><span class="fn">safe-send.js</span><span class="tick"></span></div>
 <pre><code><span class="c">// sendPrompt() only exists when Claude RENDERS the</span>
@@ -718,13 +631,14 @@ signal = model.pvalues[model.pvalues &lt; <span class="s">0.05</span>].index.<sp
 
       <div class="outcome">
         <span class="lbl">Outcome</span>
-        <p>Rolled out to seven front-line managers as a shared, permissioned Claude project, and <b>adopted by Enterprise CS leadership as the standard for new-hire assignment closeout</b>. The segment director sponsored the rollout and pulled the timeline forward.</p>
-        <p class="est"><i>Est.</i> ~2 hours per book-building or rebalancing cycle, per manager. Stated as a unit rate deliberately — adoption across the seven is access, not measured usage.</p>
+        <p>In use across <b>8 teams, with 132 account moves processed</b> through it and real workflows run end to end: a phased book transition, intra-segment moves, departing-CSM rebalancing, and a book built from zero for a new hire. Extended to Mid-Market at that segment's request.</p>
+        <p class="est"><i>Est.</i> ~2 hours per manager per week, self-reported by managers and not yet validated with a time log. Stated as a unit rate; validation is the next step.</p>
       </div>
+      <div class="note">It proposes; the manager approves. <b>Nothing writes to the platform of record until a batch is approved.</b></div>
 
       <div class="shots">
-        <figure class="shot shot--md"><div class="shot-bar"><span>account assignment · overview</span></div><img loading="lazy" decoding="async" src="account-assignment-overview.webp" alt="Account Assignment Command Center overview"></figure>
-        <figure class="shot shot--md"><div class="shot-bar"><span>account assignment · director view</span></div><img loading="lazy" decoding="async" src="account-assignment-director.webp" alt="Account Assignment director view"></figure>
+        <figure class="shot shot--md"><div class="shot-bar"><span>account assignment · overview</span></div><img loading="lazy" decoding="async" src="account-assignment-overview.webp" alt="Account-Assignment Workbench overview"></figure>
+        <figure class="shot shot--md"><div class="shot-bar"><span>account assignment · director view</span></div><img loading="lazy" decoding="async" src="account-assignment-director.webp" alt="Account-Assignment Workbench director view"></figure>
         <!-- SCREENSHOT SLOT — the manager-facing workbench, as rendered for a manager, not your admin session.
              REDACT BY REBUILDING, NOT BY OBSCURING: blurred or black-boxed regions signal real data underneath.
              Replace account names, ARR values, and CSM names with synthetic ones and label the shot illustrative.
@@ -736,10 +650,181 @@ signal = model.pvalues[model.pvalues &lt; <span class="s">0.05</span>].index.<sp
     </div>
   </article>
 
+  <!-- F.02 -->
+  <article class="entry rv" id="f02">
+    <div class="entry-rail">
+      <span class="eid">F.02</span>
+      <dl class="spec">
+        <div><dt>State</dt><dd>Rolling out · first team reviews in progress</dd></div>
+        <div><dt>Renewals in scope</dt><dd>~6,200 open opportunities</dd></div>
+        <div><dt>Segments</dt><dd>Enterprise · Frontiers · Public Sector · Scale</dd></div>
+        <div><dt>Cross-functional</dt><dd>CS + Renewals team</dd></div>
+        <div><dt>Builds shipped</dt><dd>35 · versioned, stamped on every page</dd></div>
+        <div><dt>Writes to source systems</dt><dd class="ok">None · read-only</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h3 class="dsp-2">Renewal Review Workbench</h3>
+      <span class="kind">Live CRM + CS-platform renewal surface · shared review log · CSM and renewal-AE context on one card · Slack pre-reads and recaps</span>
+      <p>CS managers run a monthly renewal review with cross-functional partners. It ran on a static spreadsheet. Meetings spent their time clicking into CRM opportunities and CS-platform account pages to find the CSM's view, the renewal AE's notes, sentiment, and contract structure, and <b>action items from one review had no reliable home for the next</b>. Leadership decided to move the review onto the workbench and retire the spreadsheet.</p>
+      <p><b>The review runs end to end in one surface.</b> A manager filters to a team and a review window, or clicks review priority: this quarter plus the next two, largest available-to-renew first, with minimum-value bands. They star accounts for the agenda and post a pre-read request to the team's Slack, grouped by CSM, asking each CSM to update their renewal notes in the CS platform by T-2. On refresh, those notes land on each review card next to the renewal AE's notes from the CRM, available-to-renew, forecast, win probability, sentiment, renewal propensity, delinquency, expansion opportunities, and business-review coverage. Decisions and next actions are logged on the card into a shared store every manager sees live. Afterward, a recap posts to Slack, an exec summary goes out by email, or the read-out exports.</p>
+      <p>Most of the work after launch was making it hold up for people other than me.</p>
+      <p><b>One unreadable field used to blank the page.</b> CRM profiles differ in which fields each user can read, and a single unreadable optional field failed the whole query for that person. Fields are now split into required and optional. When the CRM rejects an optional field, the page drops exactly that field, remembers it for that browser, keeps working, and shows a banner naming what is missing and what is still safe to use. Money fields that disappear get a banner, not a footnote, so nobody reads a missing forecast as a zero.</p>
+      <p><b>Families roll up.</b> A customer split across branch or billing-only child accounts showed the parent at a fraction of its real renewal. Accounts now roll up to one family line with combined value, and the children stay expandable.</p>
+      <p><b>A manager found the window bug.</b> One CSM's book showed 5 of 18 accounts because the load window was too narrow, so multi-year renewals were never loaded. The window now covers every open renewal from the start of the fiscal year forward, taking scope from ~2,800 to ~6,200 opportunities, and the review window became a filter rather than a load limit.</p>
+      <p><b>Live sync that silently wasn't.</b> A shared-store subscription never attached because several consumers raced the same async initializer. Notes were saving, but nobody received anyone else's updates live. Caching the initialization promise fixed it.</p>
+      <p><b>A build stamp on every page</b>, so a screenshot always says which version produced it. It became the first troubleshooting step when two people see different numbers.</p>
+      <p>One region ran its internal renewal-sync tracker as a separate tool. I folded it in rather than shipping another link, scoped to exactly what was asked: that region, above a value threshold, renewals within three quarters, opt-in per viewer.</p>
+
+      <div class="codewrap">
+        <details class="fold">
+          <summary>View implementation</summary>
+          <div class="code">
+            <div class="code-bar"><span class="fn">optional-fields.js</span><span class="tick"></span></div>
+<pre><code><span class="c">// One unreadable optional field used to kill the whole page.</span>
+<span class="k">const</span> REQUIRED = [<span class="c">/* id, close date, stage, amount, owner ... */</span>];
+<span class="k">let</span>   OPTIONAL = [<span class="c">/* forecast, win probability, ... */</span>];
+
+<span class="k">async function</span> <span class="f">load</span>() {
+  <span class="k">for</span> (;;) {
+    <span class="k">try</span> { <span class="k">return await</span> <span class="f">query</span>(REQUIRED.<span class="f">concat</span>(OPTIONAL)); }
+    <span class="k">catch</span> (e) {
+      <span class="k">const</span> f = <span class="f">optionalFieldNamedIn</span>(e.message); <span class="c">// exact match only</span>
+      <span class="k">if</span> (!f) <span class="k">throw</span> e;                <span class="c">// real outage: surface it</span>
+      OPTIONAL = OPTIONAL.<span class="f">filter</span>(x =&gt; x !== f);
+      <span class="f">rememberDropped</span>(f);             <span class="c">// next load skips it upfront</span>
+      <span class="f">banner</span>(<span class="s">`Can't read ${f} on your profile. Everything else is safe to use.`</span>);
+    }
+  }
+}</code></pre>
+          </div>
+        </details>
+      </div>
+
+      <div class="outcome">
+        <span class="lbl">Outcome</span>
+        <p>Adopted as the replacement for the spreadsheet-based review, extended from Enterprise to Frontiers, Public Sector, and Scale, and shared by a CS director with the Renewals sales team, filterable to each renewal leader's book. <b>First team-run reviews are happening now.</b></p>
+        <p class="est"><i>Est.</i> Not quantified yet. The before/after measurement is set up: manager prep time, the share of high-value renewals reviewed 90+ days before close, and late-identified risk on reviewed versus unreviewed renewals. Results are pending.</p>
+      </div>
+      <div class="note">Read-only over the CRM and the CS platform. <b>Nothing anyone does in it can change source data.</b></div>
+
+      <div class="shots">
+        <figure class="shot"><div class="shot-bar"><span>renewal review · review cards · illustrative</span></div><img loading="lazy" decoding="async" src="renewal-review.webp" alt="Renewal Review Workbench review cards, rebuilt with synthetic data"></figure>
+        <span class="shot-hint">Click any screenshot to enlarge</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- F.03 -->
+  <article class="entry rv" id="f03">
+    <div class="entry-rail">
+      <span class="eid">F.03</span>
+      <dl class="spec">
+        <div><dt>State</dt><dd>Pilot · definitions under leadership review</dd></div>
+        <div><dt>Accounts per snapshot</dt><dd>~2,300</dd></div>
+        <div><dt>Tabs</dt><dd>12 · overview and scorecard through data health</dd></div>
+        <div><dt>Data</dt><dd>CS platform + CRM via MCP</dd></div>
+        <div><dt>Replaces</dt><dd>Aging platform dashboards</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h3 class="dsp-2">Enterprise KPI Command Center</h3>
+      <span class="kind">One shared, dated snapshot of the segment's KPIs · the accounts behind every number · each manager's open work in one place</span>
+      <p>KPI reporting lived in aging dashboards inside the CS platform, and <b>the same KPI produced different numbers</b> depending on report, filter, and rollup. Managers had no single place showing their KPIs, the specific accounts behind each one, and the open work that would move them. One example motivated it: business-review completion measured from task closure read far higher than business-review coverage measured from reviews actually held in the trailing twelve months. Same activity, two very different answers.</p>
+      <p>A contributor refreshes from the CS platform, and the page saves <b>one dated snapshot</b> to a shared store, so every manager sees the same numbers with the same as-of stamp. A duplicate-load guard exists because a snapshot day loaded twice doubles every count. When the platform rejects aggregate queries, the page pulls raw rows and totals them itself so the numbers still match. Fiscal quarters resolve from the CRM's period object rather than calendar math.</p>
+      <p>It carries six KPIs, each with a built-in target, color-coded green, within 80%, or below: accounts engaged this quarter; risk-plan coverage on low-propensity accounts, meaning an open risk plan and a customer touch in the last 30 days; sentiment currency, reviewed within 90 days; sentiment mismatch, low-propensity accounts still marked green, <b>which is where surprise churn comes from</b>; utilization recovery on accounts in the red usage band; and business-review coverage over 12 months.</p>
+      <p>The data health tab lists every account excluded from the KPIs, why, and the fix. The most common reason a manager's book <b>looked empty was a missing account-relationship setting, not missing work</b>. Every number links to the account in the source system, and every definition lives on the page, including how and why it can differ from other reports.</p>
+
+      <div class="codewrap">
+        <details class="fold">
+          <summary>View implementation</summary>
+          <div class="code">
+            <div class="code-bar"><span class="fn">snapshot.js</span><span class="tick"></span></div>
+<pre><code><span class="c">// Every manager reads ONE dated snapshot, not their own live pull.</span>
+<span class="k">async function</span> <span class="f">refresh</span>() {
+  <span class="k">if</span> (<span class="k">await</span> <span class="f">lockHeldByOther</span>()) <span class="k">return</span> <span class="f">readSnapshot</span>();
+  <span class="k">const</span> rows = <span class="k">await</span> <span class="f">pullAllRows</span>();          <span class="c">// 1,000-row windows, paged</span>
+  <span class="k">if</span> (<span class="f">alreadyLoaded</span>(rows.snapshotDate))      <span class="c">// a day loaded twice</span>
+    <span class="k">throw new</span> <span class="f">Error</span>(<span class="s">"duplicate load"</span>);       <span class="c">// doubles every count</span>
+  <span class="k">await</span> <span class="f">writeSnapshot</span>({ rows, asOf: <span class="f">now</span>(), by: <span class="f">me</span>() });
+}</code></pre>
+          </div>
+        </details>
+      </div>
+
+      <div class="outcome">
+        <span class="lbl">Outcome</span>
+        <p>In pilot with leadership. Data accuracy validated with my manager ahead of review by the KPI program leads: <b>two calculation bugs found and fixed during validation</b>, and sources found for KPIs that had previously been link-outs only. The measurement plan is managers using it weekly, the segment's monthly scorecard sourced from its snapshot, legacy dashboards retired, and movement on the coverage KPIs once managers can see the accounts behind each gap.</p>
+        <p class="est"><i>Est.</i> Not quantified yet. The claim it is built to test is that KPIs move when managers can see the specific accounts behind each gap, not just the percentage.</p>
+      </div>
+      <div class="note">A KPI tool is a definitions project first. <b>One number everywhere</b> is the requirement; the dashboard is the delivery mechanism.</div>
+
+      <div class="shots">
+        <figure class="shot"><div class="shot-bar"><span>kpi command center · scorecard · illustrative</span></div><img loading="lazy" decoding="async" src="kpi-command-center.webp" alt="Enterprise KPI Command Center scorecard, rebuilt with synthetic data"></figure>
+        <span class="shot-hint">Click any screenshot to enlarge</span>
+      </div>
+    </div>
+  </article>
+
   <!-- F.04 -->
   <article class="entry rv" id="f04">
     <div class="entry-rail">
       <span class="eid">F.04</span>
+      <dl class="spec">
+        <div><dt>State</dt><dd>Working draft · leader review underway</dd></div>
+        <div><dt>Accounts loaded</dt><dd>~2,300 (Enterprise); every other territory configured</dd></div>
+        <div><dt>Territories</dt><dd>8</dd></div>
+        <div><dt>Unit of carve</dt><dd>Whole customer families</dd></div>
+        <div><dt>Partners</dt><dd>CS leadership + RevOps / Sales Planning</dd></div>
+        <div><dt>Go-live</dt><dd>Start of next fiscal year</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h3 class="dsp-2">CS Carve Studio</h3>
+      <span class="kind">Annual book-of-business carve · real books against agreed rules · scenarios, auto-balance and side-by-side compare · run jointly with RevOps</span>
+      <p>The annual carve decides which CSM owns which customer for the year. Leaders' feedback on the prior cycle was that <b>the data came too late and hurt the start of the year</b>. Books were balanced by hand, with no shared way to apply caps, renewal and expansion locks, alignment to sales pods, or account complexity, and no way to compare scenarios.</p>
+      <p>Account data comes from the warehouse table the sales carve already uses, with ownership taken from the book owner rather than the CRM account owner, which proved unreliable for this book. Each territory carries its rules from the requirements doc: family cap, target ARR, disruption cap, renewal-lock window, region share, maximum sales managers per book, and a book model.</p>
+      <p>Named scenarios add open reqs, departures, and capacity changes. <b>Auto-balance moves whole unlocked families</b> out of books that break a rule into the best-fit book in the same territory, preferring the same manager, the family's sales pod, region, and vertical, inside the disruption cap. It saves nothing until the preview is confirmed. Up to four scenarios compare side by side, everything is logged with undo, and CSV goes in and out for anyone working in a sheet.</p>
+      <p>Locks cover renewals inside a window before go-live, large open expansion pipeline, and manager locks that require a logged reason to override. The pipeline lock reuses the sales carve's own soft-lock, <b>so CS and Sales agree on which accounts stay put</b>.</p>
+      <p><b>Books have identities separate from people.</b> Each book carries a stable ID independent of the CSM assigned to it. In territory-book segments a departing CSM's book stays intact and passes whole to the backfill; in named-book segments the book follows the CSM. Open reqs become empty books at ramp capacity, and auto-balance keeps high-complexity families away from ramping CSMs. That gives leaders the standard answer they asked for to "what happens when someone leaves mid-year." It uses the same complexity score as the <a href="#f01">assignment workbench</a>.</p>
+
+      <div class="codewrap">
+        <details class="fold">
+          <summary>View implementation</summary>
+          <div class="code">
+            <div class="code-bar"><span class="fn">auto-balance.js</span><span class="tick"></span></div>
+<pre><code><span class="c">// Move WHOLE families, never single accounts; respect locks.</span>
+<span class="k">for</span> (<span class="k">const</span> book <span class="k">of</span> <span class="f">booksBreakingARule</span>()) {
+  <span class="k">for</span> (<span class="k">const</span> fam <span class="k">of</span> <span class="f">unlockedFamilies</span>(book).<span class="f">sortBy</span>(largestFirst)) {
+    <span class="k">const</span> target = <span class="f">bestFit</span>(fam, sameTerritory, {
+      prefer: [sameManager, samePod, sameRegion, sameVertical],
+      within: disruptionCap,
+    });
+    <span class="k">if</span> (target) <span class="f">stageMove</span>(fam, book, target);  <span class="c">// preview only</span>
+  }
+}
+<span class="c">// nothing persists until a human confirms the preview</span></code></pre>
+          </div>
+        </details>
+      </div>
+
+      <div class="outcome">
+        <span class="lbl">Outcome</span>
+        <p>Surfaced <b>two decisions before sign-off instead of after</b>. At current caps, most books in two segments exceed the ARR limit, which makes it a headcount input to Finance rather than a balancing problem. And the rule limiting sales managers per CSM conflicts with the disruption cap, because every team in one segment covers the same sales managers. Leaders now review real books months ahead of go-live. The carve itself is in progress.</p>
+        <p class="est"><i>Est.</i> Not quantified. The measurable claim is timing: decisions made weeks earlier than the prior cycle, with no unplanned re-carve in the first quarter. That will be reported when it happens.</p>
+      </div>
+
+      <div class="shots">
+        <figure class="shot"><div class="shot-bar"><span>carve studio · territory overview · illustrative</span></div><img loading="lazy" decoding="async" src="carve-studio.webp" alt="CS Carve Studio territory overview, rebuilt with synthetic data"></figure>
+        <span class="shot-hint">Click any screenshot to enlarge</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- F.05 -->
+  <article class="entry rv" id="f05">
+    <div class="entry-rail">
+      <span class="eid">F.05</span>
       <dl class="spec">
         <div><dt>State</dt><dd class="ok">Live · generator program</dd></div>
         <div><dt>Deployed across</dt><dd class="ok">Customer Success · Implementation Services · Sales</dd></div>
@@ -792,10 +877,128 @@ signal = model.pvalues[model.pvalues &lt; <span class="s">0.05</span>].index.<sp
     </div>
   </article>
 
-  <!-- F.05 -->
-  <article class="entry rv" id="f05">
+  <!-- F.06 -->
+  <article class="entry rv" id="f06">
     <div class="entry-rail">
-      <span class="eid">F.05</span>
+      <span class="eid">F.06</span>
+      <dl class="spec">
+        <div><dt>State</dt><dd>Completed study · FY27 input</dd></div>
+        <div><dt>Method</dt><dd>Size-controlled logit</dd></div>
+        <div><dt>Survived controls</dt><dd class="ok">2 of ~8 drivers</dd></div>
+        <div><dt>Sample</dt><dd>~1,000 renewals / 2 yrs</dd></div>
+        <div><dt>Changed</dt><dd class="ok">Segment-wide metric</dd></div>
+        <div><dt>Claim</dt><dd>Predictive, not causal</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h3 class="dsp-2">Enterprise Renewal-Driver Analysis</h3>
+      <span class="kind">Agentic Claude workflow wired to Salesforce · Databricks · Gainsight · Glean → size-controlled logistic regression → director-ready executive report</span>
+      <p>An end-to-end renewal-driver study run as a single agentic workflow. Claude pulled roughly 1,000 Enterprise renewal events across two years live from Salesforce, Databricks, and Gainsight, synthesized internal context through Glean, ran the statistics, and rendered a brand-matched executive report — a pipeline that would traditionally take an analyst, BizOps, and a designer.</p>
+      <p>The core is a <b>size-controlled logistic regression</b>: it isolated the <b>two activities</b> that stay predictive of renewal after controlling for account size, segment, and tenure — against a set of commonly assumed drivers that did not survive controls. I held the line on rigor throughout — reporting findings as <b>predictive after controls</b>, not causal, and reconciling to the certified rate rather than a convenient number.</p>
+
+      <div class="codewrap">
+        <details class="fold">
+          <summary>View implementation</summary>
+          <div class="code">
+            <div class="code-bar"><span class="fn">renewal-driver-analysis.py</span><span class="tick"></span></div>
+<pre><code><span class="k">import</span> statsmodels.formula.api <span class="k">as</span> smf
+
+<span class="c"># ~1,000 Enterprise renewals, 2 yrs — pulled live across</span>
+<span class="c"># Salesforce + Databricks + Gainsight by the agent</span>
+df = <span class="f">load_renewals</span>(systems=[<span class="s">"sfdc"</span>, <span class="s">"databricks"</span>, <span class="s">"gainsight"</span>])
+
+<span class="c"># which activities stay predictive of renewal AFTER</span>
+<span class="c"># controlling for account size, segment, tenure?</span>
+model = smf.<span class="f">logit</span>(
+    <span class="s">"renewed ~ exec_engagement + qbr_cadence + support_health"</span>
+    <span class="s">"  + onboarding_score + ...        # ~8 assumed drivers"</span>
+    <span class="s">"  + C(segment) + np.log(arr) + tenure_years"</span>,  <span class="c"># controls</span>
+    data=df,
+).<span class="f">fit</span>(disp=<span class="k">False</span>)
+
+<span class="c"># keep only drivers significant after controls — the signal</span>
+signal = model.pvalues[model.pvalues &lt; <span class="s">0.05</span>].index.<span class="f">tolist</span>()</code></pre>
+          </div>
+        </details>
+      </div>
+
+      <div class="outcome">
+        <span class="lbl">Outcome</span>
+        <p>Reconciled <b>the renewal metric an entire ~1,700-account segment reports on</b> to the certified Finance/BizOps rate, closing a long-standing reporting gap, and identified a pool of renewals not covered by any motion. Delivered as a director-ready report and a CS×Renewals operating-model proposal to inform FY27 Enterprise renewal strategy.</p>
+        <p class="est"><i>Est.</i> Work that would conventionally take an analyst, a BizOps partner, and a designer several weeks, run as one workflow. The uncovered-renewal pool is scope identified — no revenue outcome is claimed for it.</p>
+      </div>
+      <div class="note">Correlational with controls, reported as "predictive after controlling for…" — never causal. <b>The certified Finance rate is the source of truth</b>, not a convenient number.</div>
+    </div>
+  </article>
+
+  <!-- F.07 -->
+  <article class="entry rv" id="f07">
+    <div class="entry-rail">
+      <span class="eid">F.07</span>
+      <dl class="spec">
+        <div><dt>State</dt><dd>Absorbed · scheduled tasks</dd></div>
+        <div><dt>Surface</dt><dd>React artifact · v8 final</dd></div>
+        <div><dt>Integrations</dt><dd>5 systems via MCP</dd></div>
+        <div><dt>Failure mode</dt><dd>Isolated per step</dd></div>
+      </dl>
+    </div>
+    <div>
+      <h3 class="dsp-2">Operations Command Center</h3>
+      <span class="kind">React artifact orchestrating MCP connectors + the in-artifact Anthropic API ("Claude-in-Claude")</span>
+      <p>A personal operations cockpit with one-tap buttons for every recurring CS Ops job: morning briefing, weekly status, Confluence docs, BRD creation, Jira ticket drafting, Slack thread summaries, QBR data pulls. Each button calls Claude <b>from inside the artifact</b>, attaches the right MCP servers, gathers live data, and returns a drafted output with a preview-before-send flow.</p>
+      <p>I rebuilt it on <b>useReducer</b> after early versions broke, to fix stale-closure bugs in the async handlers, and added per-step error isolation through a <span class="mono">safeMcp()</span> wrapper so one failed integration doesn't sink the whole run.</p>
+
+      <div class="codewrap">
+        <details class="fold">
+          <summary>View implementation</summary>
+          <div class="code">
+            <div class="code-bar"><span class="fn">command-center.jsx</span><span class="tick"></span></div>
+<pre><code><span class="k">async function</span> <span class="f">callClaude</span>(system, prompt, mcp = [], tools = []) {
+  <span class="k">const</span> body = {
+    model: <span class="s">"claude-sonnet-4-20250514"</span>,
+    max_tokens: <span class="s">1000</span>,
+    system, messages: [{ role: <span class="s">"user"</span>, content: prompt }],
+  };
+  <span class="k">if</span> (mcp.length)   body.mcp_servers = mcp;
+  <span class="k">if</span> (tools.length) body.tools = tools;
+  <span class="k">return</span> (<span class="k">await</span> <span class="f">fetch</span>(API_URL, {
+    method: <span class="s">"POST"</span>,
+    headers: { <span class="s">"Content-Type"</span>: <span class="s">"application/json"</span> },
+    body: <span class="f">JSON.stringify</span>(body),
+  })).<span class="f">json</span>();
+}
+
+<span class="c">// extract by block TYPE — never by position; MCP</span>
+<span class="c">// responses interleave text / tool_use / tool_result</span>
+<span class="k">const</span> <span class="f">results</span> = (d) =&gt; (d?.content ?? [])
+  .<span class="f">filter</span>(b =&gt; b.type === <span class="s">"mcp_tool_result"</span>)
+  .<span class="f">map</span>(b =&gt; b.content?.[<span class="s">0</span>]?.text || <span class="s">""</span>);
+
+<span class="c">// per-step isolation: one broken integration ≠ dead run</span>
+<span class="k">async function</span> <span class="f">safeMcp</span>(label, fn) {
+  <span class="k">try</span>  { <span class="k">return</span> { label, ok: <span class="k">true</span>,  data: <span class="k">await</span> <span class="f">fn</span>() }; }
+  <span class="k">catch</span> (e) { <span class="k">return</span> { label, ok: <span class="k">false</span>, error: e.message }; }
+}</code></pre>
+          </div>
+        </details>
+      </div>
+
+      <div class="outcome">
+        <span class="lbl">Outcome</span>
+        <p>Became my daily driver and a template teammates adapted. Its recurring jobs have since moved onto scheduled tasks — the artifact proved which jobs were worth automating, and then stopped being the surface they run on. v8 removed the Atlassian MCP connector entirely: the ticketing and wiki instance sits in a government-cloud environment that third-party integrations can't reach. All queries reroute through the Glean MCP, which a teammate independently confirmed was more accurate. This is my personal cockpit; the org-wide <a href="#f03">Enterprise KPI Command Center</a> is a different tool.</p>
+      </div>
+
+      <div class="shots">
+        <figure class="shot shot--sm"><div class="shot-bar"><span>command center · live artifact</span></div><img loading="lazy" decoding="async" src="command-center.webp" alt="Operations Command Center artifact"></figure>
+        <span class="shot-hint">Click any screenshot to enlarge</span>
+      </div>
+    </div>
+  </article>
+
+  <!-- F.08 -->
+  <article class="entry rv" id="f08">
+    <div class="entry-rail">
+      <span class="eid">F.08</span>
       <dl class="spec">
         <div><dt>State</dt><dd class="ok">Live · nightly · patched</dd></div>
         <div><dt>Runs against</dt><dd>~1,700 accounts</dd></div>
@@ -867,10 +1070,10 @@ signal = model.pvalues[model.pvalues &lt; <span class="s">0.05</span>].index.<sp
     </div>
   </article>
 
-  <!-- F.06 -->
-  <article class="entry rv" id="f06">
+  <!-- F.09 -->
+  <article class="entry rv" id="f09">
     <div class="entry-rail">
-      <span class="eid">F.06</span>
+      <span class="eid">F.09</span>
       <dl class="spec">
         <div><dt>Trigger</dt><dd class="flag">2 mistimed tasks</dd></div>
         <div><dt>Cause</dt><dd>Upstream, 8 months prior</dd></div>
@@ -901,10 +1104,10 @@ signal = model.pvalues[model.pvalues &lt; <span class="s">0.05</span>].index.<sp
     </div>
   </article>
 
-  <!-- F.07 -->
-  <article class="entry rv" id="f07">
+  <!-- F.10 -->
+  <article class="entry rv" id="f10">
     <div class="entry-rail">
-      <span class="eid">F.07</span>
+      <span class="eid">F.10</span>
       <dl class="spec">
         <div><dt>State</dt><dd class="ok">Delivered · public launch</dd></div>
         <div><dt>Scope</dt><dd class="ok">Every customer-facing template</dd></div>
@@ -942,84 +1145,84 @@ signal = model.pvalues[model.pvalues &lt; <span class="s">0.05</span>].index.<sp
 
   <div class="log">
     <div class="item rv">
-      <div class="item-h"><span class="item-n">06</span><span class="item-t">React + MCP artifact</span></div>
+      <div class="item-h"><span class="item-n">11</span><span class="item-t">React + MCP artifact</span></div>
       <h4>Morning Briefing Generator</h4>
       <p>The first working build and proof-of-concept: pulls open Jira tickets, unreplied Slack, and unread Gmail, compiles a clean HTML email, and drafts it to the inbox via the Gmail MCP. One tap, no input.</p>
       <div class="res">Validated the in-artifact API + MCP pattern end to end, then was superseded by the Command Center and the briefing agent, and eventually by the scheduled task that replaced both.</div>
     </div>
     <div class="item rv">
-      <div class="item-h"><span class="item-n">07</span><span class="item-t">Claude skill</span></div>
+      <div class="item-h"><span class="item-n">12</span><span class="item-t">Claude skill</span></div>
       <h4>Weekly Manager-Update Generator</h4>
       <p>Converts a raw weekly activity dump into a manager-ready brief: summary grouped by workstream, a stalled-items list with owners and dependency risks, and exactly three direct questions for the 1:1.</p>
       <div class="res">Turned a recurring 30+ min assemble-and-frame task into a quick review, and now runs as a scheduled weekly recap rather than a step I trigger.</div>
     </div>
     <div class="item rv">
-      <div class="item-h"><span class="item-n">08</span><span class="item-t">In-artifact AI tool</span></div>
+      <div class="item-h"><span class="item-n">13</span><span class="item-t">In-artifact AI tool</span></div>
       <h4>Requirements Document Generator</h4>
       <p>Describe a Gainsight build in plain English; get back a complete <b>14-section business requirements document</b> covering scope, trigger and rule logic, CTA config, playbook tasks, acceptance criteria, and timeline. It fills everything inferable and brackets what needs my input.</p>
       <div class="res">Standardized the CS Ops → CS Systems handoff artifact and cut requirements drafting to a <b>review-and-fill pass</b> — still the format used for new builds.</div>
       <div class="est"><i>Est.</i> ~2–3 hours saved per document.</div>
     </div>
     <div class="item rv">
-      <div class="item-h"><span class="item-n">09</span><span class="item-t">Reusable prompt / tool</span></div>
+      <div class="item-h"><span class="item-n">14</span><span class="item-t">Reusable prompt / tool</span></div>
       <h4>Quarterly KPI Analysis &amp; Speaker Notes</h4>
       <p>Analyzes quarter-over-quarter KPI data by segment, generates per-metric speaker notes, and condenses it to a 2–4 line executive slide summary. Flags low-volume metrics as statistically unreliable.</p>
       <div class="res">A repeatable QBR-prep tool catalogued in my CS Ops prompt library.</div>
       <div class="est"><i>Est.</i> ~5 hours per quarter of analysis and note-writing.</div>
     </div>
     <div class="item rv">
-      <div class="item-h"><span class="item-n">10</span><span class="item-t">Dashboard design</span></div>
+      <div class="item-h"><span class="item-n">15</span><span class="item-t">Dashboard design</span></div>
       <h4>Enterprise Business-Review Dashboards</h4>
       <p>A ground-up redesign that respected real platform limits: the CSM view trimmed to fit inside the platform's hard widget ceiling, the manager view reusing those reports via scoped global filters, and an un-buildable pivot concept replaced with a flat, sortable urgent-action queue.</p>
       <div class="res">Buildable dashboards inside the platform's <b>30-widget ceiling</b>, down to swapping saturated palettes for fills that actually render.</div>
     </div>
     <div class="item rv">
-      <div class="item-h"><span class="item-n">11</span><span class="item-t">Research + decision doc</span></div>
+      <div class="item-h"><span class="item-n">16</span><span class="item-t">Research + decision doc</span></div>
       <h4>Self-Service Business-Review Strategy</h4>
       <p>A strategic review comparing three operating models for the self-service Business Review motion, landing on a hybrid recommendation with the specific decisions teed up that make the requirements doc write itself.</p>
       <div class="res">Gave leadership an <b>evidence-backed</b> basis for the motion design, with sourced comparisons behind it.</div>
     </div>
     <div class="item rv">
-      <div class="item-h"><span class="item-n">12</span><span class="item-t">Data build · Python / pandas</span></div>
+      <div class="item-h"><span class="item-n">17</span><span class="item-t">Data build · Python / pandas</span></div>
       <h4>Template Inventory for a Tool Migration</h4>
       <p>To support a platform deprecation, Claude crawled hundreds of Drive files, cross-referenced a usage log to keep only templates with real 2026 usage, confirmed master links for the survivors, then mapped auto-populated versus manually filled fields per template.</p>
       <div class="res">Scoped the migration to <b>real usage rather than the full inventory</b>, so the team prioritized what was actually being generated.</div>
     </div>
     <div class="item rv">
-      <div class="item-h"><span class="item-n">13</span><span class="item-t">.docx synthesis</span></div>
+      <div class="item-h"><span class="item-n">18</span><span class="item-t">.docx synthesis</span></div>
       <h4>Account-Consolidation Business Cases</h4>
       <p>Seven Tier-1 account business cases for a hierarchy-consolidation pilot, each built to a leadership-mandated frame by synthesizing CTA and timeline exports, Slack and Glean status, and CRM/ERP data.</p>
       <div class="res">Became the document that <b>gated CSM validation and the SteerCo opt-in deadline</b>, both since concluded.</div>
       <div class="est"><i>Est.</i> ~6 hours of manual synthesis per case.</div>
     </div>
     <div class="item rv">
-      <div class="item-h"><span class="item-n">14</span><span class="item-t">Build / no-build judgment</span></div>
+      <div class="item-h"><span class="item-n">19</span><span class="item-t">Build / no-build judgment</span></div>
       <h4>Knowing When Not to Build</h4>
       <p>I planned to shelve my native-platform license-utilization build in favor of a peer's Claude-and-warehouse artifact — then reversed my own recommendation after the peer argued that durable full-book reporting belongs natively in the platform of record: no snapshot drift, no second surface for CSMs. The peer's artifact owns program effectiveness and root-cause work; the native build owns the durable "how's my book" view.</p>
       <div class="res">The judgment call was <b>which tool should not exist</b>, and the deciding argument came from the peer, not from me.</div>
     </div>
     <div class="item rv">
-      <div class="item-h"><span class="item-n">15</span><span class="item-t">Architecture from the extract</span></div>
+      <div class="item-h"><span class="item-n">20</span><span class="item-t">Architecture from the extract</span></div>
       <h4>Utilization Dashboard Architecture</h4>
       <p>A hybrid design — raw licensing object for blended-rate, trend, and device-level detail; a derived dataset only for account-grain counting and the underutilization flag — set by analyzing the actual extract first: 3,529 rows, 811 accounts, 14 device types. That overturned two working assumptions. The join key had to be account ID, not company name, which isn't unique. And the platform's own underutilization flag had to be used as-is, because flagged rows spanned a range wide enough to prove the flag encoded logic the raw percentage didn't.</p>
       <div class="res">Denominator <b>reconciled to the existing account-level view</b> rather than chosen independently.</div>
       <div class="est"><i>Est.</i> ~30 hours of rebuild avoided — the wrong join key would have produced wrong numbers that surfaced only after launch.</div>
     </div>
     <div class="item rv">
-      <div class="item-h"><span class="item-n">16</span><span class="item-t">Design under platform limits</span></div>
+      <div class="item-h"><span class="item-n">21</span><span class="item-t">Design under platform limits</span></div>
       <h4>Program Reporting, Split at the Ceiling</h4>
       <p>Two dashboards — adoption/expansion and renewal-risk/propensity — deliberately split rather than merged, because a single one would have exceeded the platform's hard widget ceiling.</p>
       <div class="res">Two shippable dashboards instead of one that the platform would have rejected at build time.</div>
     </div>
     <div class="item rv">
-      <div class="item-h"><span class="item-n">17</span><span class="item-t">Migration governance</span></div>
+      <div class="item-h"><span class="item-n">22</span><span class="item-t">Migration governance</span></div>
       <h4>Risk-Taxonomy Migration Audit</h4>
       <p>A rule-by-rule keep/pause/hold assessment ahead of a taxonomy cutover, scoped tightly to the US enterprise segment and grounded in live open-task counts and last-fired dates pulled by query rather than by opinion. <b>13 rules</b> assessed, landing at <b>8 keep, 3 pause, 2 hold</b>.</p>
       <div class="res">Two governance positions came out of it, both holding for the pending cutover: <b>Ops owns the rule pass</b>, and nothing gets paused until its replacement trigger is live.</div>
       <div class="est"><i>Est.</i> ~15 hours of query-grounded audit in place of opinion-based review, with 8 live rules kept from lapsing during cutover.</div>
     </div>
     <div class="item rv">
-      <div class="item-h"><span class="item-n">18</span><span class="item-t">Executive artifact</span></div>
+      <div class="item-h"><span class="item-n">23</span><span class="item-t">Executive artifact</span></div>
       <h4>Executive QBR as a Produced Artifact</h4>
       <p>A quarterly business review for a senior audience: deck rebuilt to the new brand system, a full word-for-word presenter script with timing cues and room reads, and a capacity snapshot. The capacity data was <b>observed, not estimated</b> — real calendar data, a measured 24-hour inbound-message sample labeled as a sample, actual open-ticket counts.</p>
       <div class="res">Every capacity figure in the deck was traceable to a source a director could ask about.</div>
@@ -1028,25 +1231,25 @@ signal = model.pvalues[model.pvalues &lt; <span class="s">0.05</span>].index.<sp
            REPLACE every figure with plausible dummy values rather than blurring, and swap segment and manager names. -->
     </div>
     <div class="item rv">
-      <div class="item-h"><span class="item-n">19</span><span class="item-t">KPI governance</span></div>
+      <div class="item-h"><span class="item-n">24</span><span class="item-t">KPI governance</span></div>
       <h4>KPI Standardization for a Fiscal Year</h4>
       <p>Five primary success KPIs anchored to a dollar-weighted renewal-rate definition — renewal ACV over rolling-off ARR, trailing twelve months — owned by BizOps rather than a CS-local definition. Per-manager and per-segment computation ships with numerator and denominator disclosed, and low-volume segments flagged as unreliable. Still in progress: the underlying source of truth is being built.</p>
       <div class="res">Two of the five remain <b>published as blocked, with named blockers</b>, rather than quietly fudged into a number.</div>
     </div>
     <div class="item rv">
-      <div class="item-h"><span class="item-n">20</span><span class="item-t">Skill library · cost governance</span></div>
+      <div class="item-h"><span class="item-n">25</span><span class="item-t">Skill library · cost governance</span></div>
       <h4>Personal Skills Library</h4>
       <p>One authored skill became a library of three with routing rules — the daily briefing agent, the weekly manager-brief generator above, and an account-assignment reader that ingests the daily platform extract and returns a readout, a paste-ready summary, and a CSV. Behind it sits a documented <b>model-selection framework</b>: reflex lookups to the small model, executional pulls to the mid tier, judgment and narrative to the frontier tier, because per-token cost is a real operating constraint at this usage level.</p>
       <div class="res"><b>Three skills in routine use</b>, each routed to the cheapest model that performs the task reliably.</div>
     </div>
     <div class="item rv">
-      <div class="item-h"><span class="item-n">21</span><span class="item-t">Operating-model design · proposed</span></div>
+      <div class="item-h"><span class="item-n">26</span><span class="item-t">Operating-model design · proposed</span></div>
       <h4>Intake &amp; Request-Routing Redesign</h4>
       <p>A proposal to replace ad-hoc form-and-DM intake with a structured request log in the CRM, plus a tool-prioritization framework — sized against a <b>measured 24-hour sample</b>: 15–20 inbound messages from ~10 people, against 30+ concurrent open tickets. Stated as a sample, not a daily average. On the roadmap, not yet operating.</p>
       <div class="res">Designed the operating model around <b>measured demand</b> rather than absorbing it ad hoc.</div>
     </div>
     <div class="item rv">
-      <div class="item-h"><span class="item-n">22</span><span class="item-t">Data-integrity audits</span></div>
+      <div class="item-h"><span class="item-n">27</span><span class="item-t">Data-integrity audits</span></div>
       <h4>Two Data-Integrity Audits</h4>
       <p>Validated a claim that a <b>765-account</b> re-tiering backfill was complete: <b>14 accounts (~2%) were still mis-tiered</b>, delivered as a workbook with summary and detail tabs rather than as an assertion. Separately, diagnosed an orphaned record that turned out to be a ghost left by a CRM merge that had already succeeded — meaning the upstream team had nothing to fix.</p>
       <div class="res">In both cases the deliverable was a verified answer that <b>reduced someone else's scope of work</b>.</div>
@@ -1065,7 +1268,8 @@ signal = model.pvalues[model.pvalues &lt; <span class="s">0.05</span>].index.<sp
       <h2 class="dsp">Governing AI across the org</h2>
       <p class="intro">
         Building AI tooling is one problem. Keeping an organization's AI tooling trustworthy once many people are building it
-        is a different one, and it isn't solved by building more. As AI tooling scaled across the org, I proposed the governance model.
+        is a different one, and it isn't solved by building more. As AI tooling scaled across the org, I proposed the governance
+        model, and I now co-lead the program implementing it.
       </p>
     </div>
   </div>
@@ -1085,6 +1289,27 @@ signal = model.pvalues[model.pvalues &lt; <span class="s">0.05</span>].index.<sp
       <span class="lbl">The proposal</span>
       <h4>An intake and governance operating model</h4>
       <p>Who may build. Who validates. Where the source of truth lives. How a tool gets published, and who owns it after. I took it to leadership as <b>a set of decisions to be made</b>, with options and tradeoffs — not as a problem to be raised.</p>
+    </div>
+  </div>
+
+  <p class="gov-status rv">
+    <b>The proposal became a program.</b> I co-lead a CS-wide AI intake and adoption pillar covering every CS segment and
+    Services: a charter, a risk-tiered governance framework, an inventory of what's been built, one intake path, and a
+    measurement model. Early discovery found <b>at least three workflows where two or three people had independently built
+    their own version of the same tool</b>.
+  </p>
+
+  <div class="gov gov--2">
+    <div class="gcell rv">
+      <span class="lbl">The measurement model</span>
+      <h4>Measure adoption, not usage</h4>
+      <p>Three layers, reported separately and never blended. <b>Tool usage</b>: is it being opened, and by whom. Diagnostic only, per tool, never summed across tools. <b>Workflow adoption</b>: has the intended workflow moved into the tool and stopped happening elsewhere, against a stated denominator. This is the measure of record. <b>Business value</b>: did the workflow get better, shown as a before/after per promoted tool and validated by users confirming the old process stopped.</p>
+      <p>The finding that shaped it: AI spend is driven by model choice and artifact building, not frequency of use, so ranking teams by spend ranks them by how much they build. Usage was already high. <b>The gap was governance and measurement at the workflow layer, not adoption.</b></p>
+    </div>
+    <div class="gcell rv">
+      <span class="lbl">The test</span>
+      <h4>The failure mode to test for</h4>
+      <p>A tool that saves time on paper while users keep a parallel spreadsheet and reconcile between the two <b>costs time instead of saving it</b>. No time saving is claimed until users confirm the old process stopped.</p>
     </div>
   </div>
 
@@ -1201,8 +1426,11 @@ signal = model.pvalues[model.pvalues &lt; <span class="s">0.05</span>].index.<sp
         <li>MCP connectors</li>
         <li>Multi-user AI tool deployment</li>
         <li>Claude Projects (shared, permissioned)</li>
+        <li>Published artifacts with shared state</li>
+        <li>Per-user connector deployment</li>
         <li>Model selection &amp; cost governance</li>
         <li>AI governance / intake design</li>
+        <li>Adoption measurement design</li>
         <li>Prompt engineering</li>
       </ul>
     </div>
@@ -1268,7 +1496,7 @@ signal = model.pvalues[model.pvalues &lt; <span class="s">0.05</span>].index.<sp
   <div class="prin">
     <div class="prow rv">
       <h4>Build, prove, then hand off</h4>
-      <p>Most projects followed the same arc: <b>build the tooling, validate it in production, then standardize it</b> or hand it off as scope grew. The endpoint is other people's daily process, not a handoff document. The account-assignment tool went out to seven managers as a shared, permissioned project. The briefing agent went further: <b>from my morning, to my team, to a generator that builds one per stakeholder across three organizations</b> — at which point the thing I'd built was the generator, not the agent. Several of these jobs now run as scheduled tasks I don't touch, which is the version of success where the tool stops being the point.</p>
+      <p>Most projects followed the same arc: <b>build the tooling, validate it in production, then standardize it</b> or hand it off as scope grew. The endpoint is other people's daily process, not a handoff document. The account-assignment tool went out to seven managers as a shared, permissioned project. The briefing agent went further: <b>from my morning, to my team, to a generator that builds one per stakeholder across three organizations</b> — at which point the thing I'd built was the generator, not the agent. The renewal review workbench and the assignment workbench now run on each person's own connectors across multiple segments, and the carve studio is used jointly with RevOps, so <b>the endpoint for several builds is other teams' operating process</b>. Several of these jobs now run as scheduled tasks I don't touch, which is the version of success where the tool stops being the point.</p>
     </div>
     <div class="prow rv">
       <h4>Engineer under the real constraints</h4>
@@ -1280,7 +1508,7 @@ signal = model.pvalues[model.pvalues &lt; <span class="s">0.05</span>].index.<sp
     </div>
     <div class="prow rv">
       <h4>Quantify where it counts</h4>
-      <p>A root cause confirmed at an <b>~88% match</b> rather than asserted. A production fix verified against the actual fire-set exports, boundary behavior included, in both directions. A backfill audited to ~98% complete with the 14 missed accounts listed. A scope pressure-tested against a 1,922-row usage log, which showed the assigned row named four of seven live templates. <b>I measure each build and report it as it is</b> — including when the honest result is qualitative, like a director pulling a timeline forward.</p>
+      <p>A root cause confirmed at an <b>~88% match</b> rather than asserted. A production fix verified against the actual fire-set exports, boundary behavior included, in both directions. A backfill audited to ~98% complete with the 14 missed accounts listed. A scope pressure-tested against a 1,922-row usage log, which showed the assigned row named four of seven live templates. <b>I measure each build and report it as it is</b> — including when the honest result is qualitative, like a director pulling a timeline forward. For the newer tools, the measurement plan was written before the results exist (baseline, a stated denominator, and targets at 90 days, 6 months and 12 months), so <b>the outcome gets reported as it lands, including if it doesn't</b>.</p>
     </div>
     <div class="prow rv">
       <h4>Ground it or don't claim it</h4>
