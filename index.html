@@ -7,7 +7,7 @@
 <title>Salim Salha · CS Operations &amp; Strategy · AI Systems</title>
 <meta name="description" content="GTM strategy and operations portfolio: AI systems now running renewal review, account assignment, KPI reporting and the annual carve for a ~$890M ARR Enterprise CS organization.">
 <link rel="canonical" href="https://thesalimsalha.github.io/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230E1A21'/%3E%3Ctext x='32' y='45' font-family='Helvetica,Arial' font-size='40' font-weight='700' fill='%23E0A340' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23111111'/%3E%3Ctext x='32' y='45' font-family='Helvetica,Arial' font-size='40' font-weight='700' fill='%23FFFFFF' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Salim Salha">
 <meta property="og:url" content="https://thesalimsalha.github.io/">
@@ -43,31 +43,31 @@
     color-scheme: only light;
 
     /* ——— palette ——— */
-    --ink:#0E1A21;          /* deep petrol — band ground */
-    --ink-2:#152530;        /* raised panel on ink */
-    --ink-line:#263A45;
-    --on-ink:#E2E9E6;
-    --on-ink-dim:#8FA2A2;
+    --ink:#111111;          /* near-black band ground */
+    --ink-2:#1B1B1B;        /* raised panel on ink */
+    --ink-line:#2F2F2F;
+    --on-ink:#F4F4F2;
+    --on-ink-dim:#9C9C98;
 
-    --paper:#E8ECE9;        /* cool drafting grey-green */
-    --surface:#F5F8F6;
-    --line:#C9D2CD;
-    --line-2:#AFBCB6;
-    --text:#101E26;
-    --text-2:#3E5158;
-    --text-3:#63757A;
+    --paper:#FAFAF8;        /* off-white */
+    --surface:#FFFFFF;
+    --line:#E3E3DF;
+    --line-2:#C9C9C4;
+    --text:#111111;
+    --text-2:#444444;
+    --text-3:#767676;
 
-    --brass:#96660F;        /* accent on paper */
-    --brass-lit:#E0A340;    /* accent on ink */
+    --brass:#111111;        /* accent on paper */
+    --brass-lit:#FFFFFF;    /* accent on ink */
     --flag:#9A3222;         /* alert / incident, used sparingly */
     --flag-lit:#E0785F;
-    --ok:#25604A;           /* verified / reconciled */
-    --ok-lit:#77C4A0;
+    --ok:#111111;           /* verified / reconciled */
+    --ok-lit:#FFFFFF;
 
-    --code-bg:#0A141A;
+    --code-bg:#0B0B0B;
     --code-dim:#7B8E8C;
     --code-str:#84C4A4;
-    --code-key:#E0A340;
+    --code-key:#FFFFFF;
     --code-fn:#9BC2DE;
 
     --maxw:1240px;
@@ -144,12 +144,12 @@
   /* ——— hero ——— */
   .hero{padding:132px 0 64px}
   .status{display:flex;align-items:center;gap:10px;margin-bottom:34px}
-  .status .dot{width:7px;height:7px;border-radius:50%;background:var(--brass-lit);box-shadow:0 0 0 0 rgba(224,163,64,.5);animation:ping 2.8s infinite}
-  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(224,163,64,.45)}70%{box-shadow:0 0 0 8px rgba(224,163,64,0)}100%{box-shadow:0 0 0 0 rgba(224,163,64,0)}}
+  .status .dot{width:7px;height:7px;border-radius:50%;background:var(--brass-lit);box-shadow:0 0 0 0 rgba(255,255,255,.5);animation:ping 2.8s infinite}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(255,255,255,.45)}70%{box-shadow:0 0 0 8px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
   .status .lbl{color:var(--on-ink-dim);letter-spacing:.22em}
 
   .hero h1{font-size:clamp(38px,6.6vw,80px);max-width:15ch}
-  .hero h1 mark{background:none;color:var(--brass-lit)}
+  .hero h1 mark{background:none;color:inherit;text-decoration:underline;text-decoration-thickness:.07em;text-underline-offset:.12em}
   .hero-sub{
     margin-top:26px;max-width:60ch;font-size:clamp(17px,1.6vw,19.5px);
     color:var(--on-ink-dim);line-height:1.55;
@@ -165,7 +165,7 @@
     display:grid;grid-template-columns:64px minmax(0,1fr) minmax(0,.85fr);gap:24px;align-items:baseline;
     padding:16px 4px 16px 0;border-top:1px solid var(--ink-line);transition:background .18s,padding .18s;
   }
-  .idx a:hover{background:rgba(224,163,64,.06);padding-left:10px}
+  .idx a:hover{background:rgba(255,255,255,.05);padding-left:10px}
   .idx a:last-child{border-bottom:1px solid var(--ink-line)}
   .idx .n{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--brass-lit);letter-spacing:.08em}
   .idx .t{
@@ -276,29 +276,29 @@
   }
   details.fold[open] summary::before{content:"–"}
   details.fold[open] summary{margin-bottom:10px}
-  .code{background:var(--code-bg);border:1px solid #1b2a32;overflow:hidden}
+  .code{background:var(--code-bg);border:1px solid #262626;overflow:hidden}
   .code + .code{margin-top:14px}
   .code-bar{
     display:flex;align-items:center;justify-content:space-between;gap:12px;
-    padding:9px 14px;background:#101d24;border-bottom:1px solid #1b2a32;
+    padding:9px 14px;background:#161616;border-bottom:1px solid #262626;
   }
   .code-bar .fn{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--code-dim);letter-spacing:.1em;text-transform:uppercase}
-  .code-bar .tick{width:22px;height:1px;background:#2a3d47}
+  .code-bar .tick{width:22px;height:1px;background:#333333}
   pre{margin:0;padding:16px;overflow-x:auto}
-  pre code{font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.72;color:#D6E0DC;white-space:pre}
+  pre code{font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.72;color:#E6E6E6;white-space:pre}
   pre code .c{color:var(--code-dim);font-style:italic}
   pre code .k{color:var(--code-key)}
   pre code .s{color:var(--code-str)}
   pre code .f{color:var(--code-fn)}
   pre::-webkit-scrollbar{height:7px}
-  pre::-webkit-scrollbar-thumb{background:#2a3d47}
+  pre::-webkit-scrollbar-thumb{background:#333333}
 
   /* ——— gate diagram (F.08 signature graphic) ——— */
   .gate{margin-top:24px;max-width:74ch;background:var(--surface);border:1px solid var(--line);padding:22px}
   .gate .lbl{color:var(--text-3);display:block;margin-bottom:18px}
   .gate-track{display:grid;grid-template-columns:73fr 27fr;height:44px;border:1px solid var(--line-2)}
   .gate-l{
-    background:repeating-linear-gradient(-45deg,#DDE3DF,#DDE3DF 4px,#E9EDEA 4px,#E9EDEA 9px);
+    background:repeating-linear-gradient(-45deg,#EDEDEA,#EDEDEA 4px,#F5F5F2 4px,#F5F5F2 9px);
     border-right:2px solid var(--flag);
   }
   .gate-r{background:var(--brass);opacity:.9}
@@ -323,11 +323,11 @@
 
   /* ——— screenshots ——— */
   .shots{margin-top:26px;display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
-  .shot{border:1px solid var(--line-2);background:#101d24;cursor:zoom-in;transition:transform .22s;max-width:100%}
+  .shot{border:1px solid var(--line-2);background:#161616;cursor:zoom-in;transition:transform .22s;max-width:100%}
   .shot:hover{transform:translateY(-2px)}
   .shot--sm{width:300px}
   .shot--md{width:520px}
-  .shot-bar{display:flex;align-items:center;padding:8px 12px;background:#101d24;border-bottom:1px solid #1b2a32}
+  .shot-bar{display:flex;align-items:center;padding:8px 12px;background:#161616;border-bottom:1px solid #262626}
   .shot-bar span{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--code-dim);letter-spacing:.1em;text-transform:uppercase}
   .shot img{display:block;width:100%;height:auto}
   .shot-hint{width:100%;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3)}
@@ -480,6 +480,22 @@
   @media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:480px){.kpis{grid-template-columns:1fr}}
   @media print{.kpis div{background:#fff!important}.kpis b{color:#000!important}.kpis span{color:#333!important}}
+
+  /* STAR blocks */
+  .star{margin-top:4px;border-top:1px solid var(--line-2);max-width:80ch}
+  .star .r{display:grid;grid-template-columns:96px 1fr;gap:18px;padding:13px 0;border-bottom:1px solid var(--line)}
+  .star .k{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3);padding-top:5px}
+  .star .res .k{color:var(--brass);font-weight:600}
+  .entry .star p{margin:0;max-width:none}
+  .star ul{list-style:none;margin:0;padding:0}
+  .star li{position:relative;padding-left:16px;color:var(--text-2);line-height:1.55;margin-bottom:5px}
+  .star li:last-child{margin-bottom:0}
+  .star li:before{content:"";position:absolute;left:0;top:.75em;width:8px;height:1px;background:var(--brass)}
+  .star .res li{color:var(--text)}
+  .star b{color:var(--text);font-weight:600}
+  .entry .next{margin:12px 0 0;font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.55;color:var(--text-3)}
+  .entry .next i{font-style:normal;color:var(--brass);font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-right:10px}
+  @media(max-width:640px){.star .r{grid-template-columns:1fr;gap:6px}}
 </style>
 </head>
 <body>
@@ -510,43 +526,35 @@
 
     <h1 class="dsp rv">I build the operating systems a <mark>go-to-market org</mark> runs on.</h1>
 
-    <p class="hero-sub rv">
-      Then I scale them from one team to the org. Four Claude workbenches I built now run renewal review, account assignment,
-      KPI reporting, and the annual book carve for an Enterprise CS organization managing ~$890M in ARR.
-    </p>
-
     <p class="hero-lede rv">
-      I'm the sole operations partner to Samsara's US Enterprise Success organization: <b>~1,700 accounts, 11 front-line
-      managers, and 2 directors</b>, inside a public company at <b>~$2B ARR growing 30%</b>. I own coverage design, capacity,
-      renewal operations, and the KPI and data architecture under them. I lead the program that governs AI tooling across
-      all of CS and Services, and since October 2026 I've worked with Anthropic to optimize Claude across Samsara CS.
+      Sole operations partner to Samsara's US Enterprise Success org: <b>~1,700 accounts, ~$890M ARR, 11 managers, 2 directors</b>,
+      at a public company at ~$2B ARR. I build the Claude tools the org runs on, lead CS's AI program, and have worked with
+      Anthropic since October 2026 to optimize Claude across Samsara CS.
     </p>
 
     <div class="hero-meta rv">
       <a href="mailto:ssalha96@gmail.com">ssalha96@gmail.com</a><i>/</i>
       <a href="https://www.linkedin.com/in/salim-salha-296b45b3" target="_blank" rel="noopener">linkedin.com/in/salim-salha</a><i>/</i>
-      <a href="Salim_Salha_CV.pdf" download>Download CV (PDF)</a><i>/</i>
-      <span>Boston, MA</span>
+      <a href="Salim_Salha_CV.pdf" download>Download CV (PDF)</a>
     </div>
 
     <div class="kpis rv">
-      <div><b>100%</b><span>of renewal reviews run in the workbench, for 18 managers</span></div>
-      <div><b>800+</b><span>account moves at a 3-day median cycle</span></div>
+      <div><b>100%</b><span>of renewal reviews run in the workbench</span></div>
+      <div><b>800+</b><span>CSM assignments at a 3-day median cycle</span></div>
       <div><b>13 of 13</b><span>Enterprise leaders on the KPI command center weekly</span></div>
       <div><b>8 of 8</b><span>territories carved, every book inside caps</span></div>
-      <div><b>4</b><span>validated before/after AI value cases</span></div>
+      <div><b>100+</b><span>self-serve data pulls through my Claude skills</span></div>
     </div>
 
     <div class="idx rv">
       <span class="idx-h lbl">Selected work</span>
-      <a href="#f01"><span class="n">F.01</span><span class="t">Brand Relaunch, Every Customer-Facing Template</span><span class="d">Launch DRI · fixed public date · scope proven larger than assigned</span></a>
-      <a href="#f02"><span class="n">F.02</span><span class="t">Briefing Agents, and the Generator Behind Them</span><span class="d">One agent → a program live across three organizations</span></a>
-      <a href="#f03"><span class="n">F.03</span><span class="t">Account-Assignment Workbench</span><span class="d">100% of moves · 800+ · 3-day median cycle</span></a>
-      <a href="#f04"><span class="n">F.04</span><span class="t">Renewal Review Workbench</span><span class="d">100% of reviews · 85% of $250K+ renewals reviewed early</span></a>
-      <a href="#f05"><span class="n">F.05</span><span class="t">Enterprise KPI Command Center</span><span class="d">System of record · 13 of 13 leaders weekly</span></a>
-      <a href="#f06"><span class="n">F.06</span><span class="t">CS Carve Studio</span><span class="d">FY28 carve · 8 territories · every book inside caps</span></a>
-      <a href="#f07"><span class="n">F.07</span><span class="t">Renewal-Driver Analysis</span><span class="d">Size-controlled regression · predictive, not causal</span></a>
-      <a href="#governance"><span class="n">F.08</span><span class="t">Governing AI Across the Org</span><span class="d">I lead it · 9 cost centers · 4 validated value cases</span></a>
+      <a href="#f01"><span class="n">F.01</span><span class="t">Renewal Review Workbench</span><span class="d">100% of reviews · 85% of $250K+ reviewed early</span></a>
+      <a href="#f02"><span class="n">F.02</span><span class="t">Account-Assignment Workbench</span><span class="d">100% of CSM assignments · 3-day cycle</span></a>
+      <a href="#f03"><span class="n">F.03</span><span class="t">Enterprise KPI Command Center</span><span class="d">System of record · 13 of 13 leaders weekly</span></a>
+      <a href="#f04"><span class="n">F.04</span><span class="t">CS Carve Studio</span><span class="d">8 territories · every book inside caps</span></a>
+      <a href="#f05"><span class="n">F.05</span><span class="t">Claude Skills for Trusted Data</span><span class="d">100+ self-serve pulls · 5 Gainsight rules shipped</span></a>
+      <a href="#f06"><span class="n">F.06</span><span class="t">Renewal-Driver Analysis</span><span class="d">2 of ~8 drivers held up · shaped the KPIs</span></a>
+      <a href="#governance"><span class="n">F.07</span><span class="t">Governing AI Across the Org</span><span class="d">9 cost centers · 4 validated value cases</span></a>
     </div>
   </header>
 </div>
@@ -558,11 +566,7 @@
     <span class="eyebrow lbl">Work / Samsara</span>
     <div>
       <h2 class="dsp">Selected work</h2>
-      <p class="intro">
-        Seven builds, chosen because each one changed how other people work. Results are measured against baselines set before
-        launch, from the CRM and CS platform rather than the tools' own math. The longer-run targets I'm still tracking are
-        labeled as targets.
-      </p>
+      <p class="intro">Each project in the same shape: the problem, what I built, and the result. Results are measured against pre-launch baselines from the CRM and CS platform.</p>
     </div>
   </div>
 
@@ -571,21 +575,28 @@
     <div class="entry-rail">
       <span class="eid">F.01</span>
       <dl class="spec">
-        <div><dt>State</dt><dd class="ok">Delivered · public launch</dd></div>
-        <div><dt>Scope</dt><dd class="ok">Every customer-facing template</dd></div>
-        <div><dt>Assigned as</dt><dd class="flag">4 of 7 named</dd></div>
-        <div><dt>Constraint</dt><dd>Fixed date, live bindings</dd></div>
+        <div><dt>Status</dt><dd class="ok">Live · 100% of reviews</dd></div>
+        <div><dt>Users</dt><dd>18 managers + Renewals leaders</dd></div>
+        <div><dt>Scope</dt><dd>~6,200 renewals</dd></div>
+        <div><dt>Built with</dt><dd>Claude artifact · Salesforce · Gainsight</dd></div>
       </dl>
     </div>
     <div>
-      <h3 class="dsp-2">Brand Relaunch Across Every Customer-Facing Template</h3>
-      <span class="kind">Launch execution · scope forensics · AI-assisted end to end</span>
-      <p>When the company relaunched its brand publicly in July 2026, I owned the rebrand of <b>every customer-facing template at the company</b>, against a fixed public date.</p>
-      <p><b>The scope I was handed was wrong.</b> Cross-referencing the rebrand tracker against a 1,922-row generation log showed my assigned row named 4 of 7 live templates in that family, and surfaced about 25 more in active use that the tracker didn't list at all. The tracker wasn't the scope; the usage log was.</p>
-      <p><b>So was the estimate.</b> After auditing the template tooling I revised my own estimate up by more than half, then piloted two decks to validate the new number before committing to it. Every template carried live data bindings, so each was edited in place rather than copied.</p>
-      <div class="outcome">
-        <span class="lbl">Outcome</span>
-        <p>Shipped on the public launch date across a scope several times larger than assigned, <b>with every dynamic binding intact</b>.</p>
+      <h3 class="dsp-2">Renewal Review Workbench</h3>
+      <span class="kind">A Claude artifact on live CRM and CS-platform data, read-only</span>
+      <div class="star">
+        <div class="r"><span class="k">Problem</span><p>Monthly renewal reviews ran on a static spreadsheet. Meetings were spent clicking between systems, and decisions had nowhere to live between reviews.</p></div>
+        <div class="r"><span class="k">Built</span><p>A Claude artifact that puts the CSM's notes, the renewal rep's notes, value at risk, forecast, and health on one card per renewal. Managers send Slack pre-reads and log decisions to a shared record.</p></div>
+        <div class="r res"><span class="k">Result</span><ul>
+          <li><b>100% of renewal reviews</b> across Enterprise, international, and Mid-Market; spreadsheet retired</li>
+          <li><b>85% of $250K+ renewals</b> reviewed 90+ days before close</li>
+          <li><b>25% less late-identified risk</b> and 10% better forecast accuracy on reviewed renewals</li>
+          <li>Load time cut from 5 minutes to 30 seconds</li>
+        </ul></div>
+      </div>
+      <p class="next"><i>Next</i>90% early-review coverage and 40% less late-identified risk by April 2027.</p>
+      <div class="shots">
+        <figure class="shot"><div class="shot-bar"><span>renewal review · review cards · illustrative</span></div><img loading="lazy" decoding="async" src="renewal-review.webp" alt="Renewal Review Workbench review cards, rebuilt with synthetic data"></figure>
       </div>
     </div>
   </article>
@@ -595,46 +606,29 @@
     <div class="entry-rail">
       <span class="eid">F.02</span>
       <dl class="spec">
-        <div><dt>State</dt><dd class="ok">Live · generator program</dd></div>
-        <div><dt>Deployed across</dt><dd class="ok">CS · Implementation Services · Sales</dd></div>
-        <div><dt>Permissions</dt><dd>Per-user, read-only</dd></div>
-        <div><dt>Per user</dt><dd class="ok">~2 hrs / week, validated</dd></div>
+        <div><dt>Status</dt><dd class="ok">Live · Enterprise + Mid-Market</dd></div>
+        <div><dt>Moves</dt><dd class="ok">800+ · 15 managers</dd></div>
+        <div><dt>Median cycle</dt><dd class="ok">3 business days</dd></div>
+        <div><dt>Built with</dt><dd>Claude artifact · per-user connectors</dd></div>
       </dl>
     </div>
     <div>
-      <h3 class="dsp-2">Briefing Agents, and the Generator Behind Them</h3>
-      <span class="kind">Multi-step read-only Claude agent → team rollout → a generator that builds one per stakeholder</span>
-      <p>It started as one agent for my own mornings: a read across <b>five systems</b> (calendar, meeting notes, email, Slack, and enterprise search) that returns a two-minute briefing with a draft reply and a source link on every item.</p>
-      <p><b>Then the team ran on it, and the config became the product.</b> I built the layer above it: a generator that produces a briefing agent tailored to any stakeholder's systems, priorities, and definition of urgent. The next agent costs a configuration pass, not a build. It now runs across <b>Customer Success, Implementation Services, and Sales</b>.</p>
-      <p>Two failure modes are fixed at the generator level, so every agent inherits the fix. It resolves first-name-only references against sent messages and the directory, and it checks sent email and Slack before listing a task, so it doesn't nag about work that's already done.</p>
-      <div class="codewrap">
-        <details class="fold">
-          <summary>View the agent prompt</summary>
-          <div class="code">
-            <div class="code-bar"><span class="fn">daily-briefing.md</span><span class="tick"></span></div>
-<pre><code><span class="k">## TASK</span> — when I say <span class="s">"run my daily briefing"</span>:
-<span class="s">1.</span> Gather across calendar, notes, email, Slack and
-   enterprise search within the lookback window.
-<span class="s">2.</span> Disambiguate any first-name reference against my
-   sent messages + directory before using a name.
-<span class="s">3.</span> Before listing a task, verify it isn't already
-   done by checking my sent Slack / email.
-<span class="s">4.</span> Prioritize; per item give a one-line why, a
-   draft reply, and a source link.
-<span class="s">5.</span> <span class="k">Grounding rule:</span> only facts you actually
-   fetched. Never invent a date, name, or status.
-   If the briefing is suspiciously short, say so.</code></pre>
-          </div>
-        </details>
+      <h3 class="dsp-2">Account-Assignment Workbench</h3>
+      <span class="kind">One place to assign every CSM, with capacity and fit checked before anything moves</span>
+      <div class="star">
+        <div class="r"><span class="k">Problem</span><p>CSM assignments ran in spreadsheets and were executed one account at a time. Nothing checked whether the receiving CSM had room, whether the account fit their segment, or whether a customer family was being split.</p></div>
+        <div class="r"><span class="k">Built</span><p>A workbench for every kind of assignment: <b>handoffs straight from Implementation, leave coverage, new-hire books</b>, departures, and rebalances. It ranks candidates on capacity (account count and ARR as separate limits), sales-pod fit, complexity, and region. The manager approves and the move ships as one batch.</p></div>
+        <div class="r res"><span class="k">Result</span><ul>
+          <li><b>100% of CSM assignments</b> in Enterprise and Mid-Market; 800+ moves</li>
+          <li>Median cycle of <b>3 business days</b></li>
+          <li><b>90% of books within capacity</b>; ownership errors down 80%</li>
+          <li>Validated <b>~2 hours per manager per week</b>, ~700 hours a year in Enterprise</li>
+        </ul></div>
       </div>
-      <div class="outcome">
-        <span class="lbl">Outcome</span>
-        <p>A 30–45 minute daily cross-tool check became a two-minute read for every person running one, now on a scheduled morning run nobody has to trigger.</p>
-        <p class="est"><i>Validated</i> ~2 hrs/week per user, confirmed with users as a before/after value case. Each agent runs on its own credentials, so every new user repeats the full saving.</p>
-      </div>
+      <p class="next"><i>Next</i>1,500 moves, a two-day cycle, and 95% of books within capacity by April 2027.</p>
       <div class="shots">
-        <figure class="shot shot--md"><div class="shot-bar"><span>daily briefing · generated output</span></div><img loading="lazy" decoding="async" src="daily-briefing.webp" alt="Daily briefing agent output"></figure>
-        <span class="shot-hint">Click any screenshot to enlarge</span>
+        <figure class="shot shot--md"><div class="shot-bar"><span>account assignment · overview · illustrative</span></div><img loading="lazy" decoding="async" src="account-assignment-overview-v2.webp" alt="Account-Assignment Workbench overview, rebuilt with synthetic data"></figure>
+        <figure class="shot shot--md"><div class="shot-bar"><span>account assignment · capacity · illustrative</span></div><img loading="lazy" decoding="async" src="account-assignment-capacity-v2.webp" alt="Account-Assignment Workbench capacity view, rebuilt with synthetic data"></figure>
       </div>
     </div>
   </article>
@@ -644,29 +638,27 @@
     <div class="entry-rail">
       <span class="eid">F.03</span>
       <dl class="spec">
-        <div><dt>State</dt><dd class="ok">Live · Enterprise + Mid-Market</dd></div>
-        <div><dt>Share of moves</dt><dd class="ok">100% run through it</dd></div>
-        <div><dt>Moves processed</dt><dd class="ok">800+ · 15 managers</dd></div>
-        <div><dt>Median cycle</dt><dd class="ok">3 business days</dd></div>
-        <div><dt>Runs on</dt><dd>Each user's own connectors</dd></div>
-        <div><dt>Writes</dt><dd>Only approved batches</dd></div>
+        <div><dt>Status</dt><dd class="ok">Live · system of record</dd></div>
+        <div><dt>Used weekly by</dt><dd class="ok">13 of 13 leaders</dd></div>
+        <div><dt>Accounts</dt><dd>~2,300 per snapshot</dd></div>
+        <div><dt>Refresh</dt><dd class="ok">47 min → under 5</dd></div>
       </dl>
     </div>
     <div>
-      <h3 class="dsp-2">Account-Assignment Workbench</h3>
-      <span class="kind">Published Claude artifact · capacity, fit and complexity checks · approved batches instead of one-by-one edits</span>
-      <p>Moving accounts between CSMs used to happen in spreadsheets, then get executed one account at a time. Nothing checked whether the receiving CSM had room, whether the account fit their segment or region, or whether a customer family was being split. One coverage transition surfaced <b>roughly twice the accounts that had been planned for</b>.</p>
-      <p>Now a manager picks the job (a new hire's book, a departing CSM's accounts, a rebalance) or describes it in plain English. The tool ranks candidates on sales-pod alignment, capacity, complexity, and region, judging account count and ARR as <b>two separate limits</b>, because a CSM can have ARR headroom and still be full. The manager approves, and the move ships as one batch. Integrity checks catch ownership that disagrees across systems before it misroutes work.</p>
-      <p>It started as a shared project and moved to a published artifact on each viewer's own connectors once rollout showed <b>multi-user deployment was a permissions problem, not a distribution one</b>. Mid-Market asked for it and had it within a week.</p>
-      <div class="outcome">
-        <span class="lbl">Outcome</span>
-        <p>Now handles <b>100% of CS-to-CS moves in Enterprise and Mid-Market</b>: 800+ moves for 15 managers at a <b>median three-day cycle</b>. <b>90% of books sit within capacity</b>, ownership errors are down 80%, segment and region misalignment is down 60%, and repeat reassignments are down 25%, with moved accounts performing no worse than unmoved ones.</p>
-        <p class="est"><i>Validated</i> ~2 hours per manager per week, about 700 hours a year in Enterprise alone. Tracking toward 1,500 moves, a two-day cycle, and 95% of books within capacity by April 2027.</p>
+      <h3 class="dsp-2">Enterprise KPI Command Center</h3>
+      <span class="kind">One dated snapshot of every Enterprise KPI, with the accounts behind each number</span>
+      <div class="star">
+        <div class="r"><span class="k">Problem</span><p>The same KPI returned different numbers depending on the report, so meetings argued about the number instead of the accounts behind it.</p></div>
+        <div class="r"><span class="k">Built</span><p>One dated snapshot every manager reads. Each KPI is colored against target and clicks through to its accounts, and a data-health view lists every excluded account and the fix. The KPI design draws on the renewal-driver analysis (F.06).</p></div>
+        <div class="r res"><span class="k">Result</span><ul>
+          <li>System of record, used weekly by <b>all 13 managers and directors</b></li>
+          <li>Risk-plan coverage on high-risk accounts <b>more than doubled</b>; sentiment mismatch halved</li>
+          <li>Half the legacy dashboards retired; CS Ops reporting time <b>down 60%</b></li>
+        </ul></div>
       </div>
+      <p class="next"><i>Next</i>The same pattern as the system of record for every CS segment by April 2027.</p>
       <div class="shots">
-        <figure class="shot shot--md"><div class="shot-bar"><span>account assignment · overview · illustrative</span></div><img loading="lazy" decoding="async" src="account-assignment-overview-v2.webp" alt="Account-Assignment Workbench overview, rebuilt with synthetic data"></figure>
-        <figure class="shot shot--md"><div class="shot-bar"><span>account assignment · capacity · illustrative</span></div><img loading="lazy" decoding="async" src="account-assignment-capacity-v2.webp" alt="Account-Assignment Workbench capacity view, rebuilt with synthetic data"></figure>
-        <span class="shot-hint">Click any screenshot to enlarge</span>
+        <figure class="shot"><div class="shot-bar"><span>kpi command center · scorecard · illustrative</span></div><img loading="lazy" decoding="async" src="kpi-command-center.webp" alt="Enterprise KPI Command Center scorecard, rebuilt with synthetic data"></figure>
       </div>
     </div>
   </article>
@@ -676,47 +668,26 @@
     <div class="entry-rail">
       <span class="eid">F.04</span>
       <dl class="spec">
-        <div><dt>State</dt><dd class="ok">Live · 100% of reviews</dd></div>
-        <div><dt>Renewals in scope</dt><dd>~6,200 open</dd></div>
-        <div><dt>Used by</dt><dd>18 managers + all Renewals leaders</dd></div>
-        <div><dt>Load time</dt><dd class="ok">5 min → 30 sec</dd></div>
-        <div><dt>Writes to source</dt><dd class="ok">None · read-only</dd></div>
+        <div><dt>Status</dt><dd class="ok">FY28 carve delivered</dd></div>
+        <div><dt>Territories</dt><dd class="ok">8 of 8</dd></div>
+        <div><dt>Partners</dt><dd>RevOps + Sales Planning</dd></div>
       </dl>
     </div>
     <div>
-      <h3 class="dsp-2">Renewal Review Workbench</h3>
-      <span class="kind">Live CRM + CS-platform renewal surface · shared review log · Slack pre-reads and recaps</span>
-      <p>Monthly renewal reviews ran on a static spreadsheet. Meetings were spent clicking between systems to find the CSM's view and the renewal rep's notes, and <b>decisions from one review had nowhere to live for the next</b>. Leadership chose to move the review onto this workbench.</p>
-      <p>A manager picks a team and window, posts a pre-read request to Slack, and on refresh the CSM's notes land on each card next to the renewal rep's notes, value at risk, forecast, and health. Decisions log to a shared record every manager sees live.</p>
-      <p><b>Most of the work after launch was making it hold up for other people.</b> One unreadable field used to blank the whole page for some users; now the page drops just that field and says so. A customer split across child accounts now rolls up to one line. A manager spotted that multi-year renewals weren't loading, which took scope from ~2,800 to ~6,200 renewals.</p>
-      <div class="codewrap">
-        <details class="fold">
-          <summary>View implementation</summary>
-          <div class="code">
-            <div class="code-bar"><span class="fn">optional-fields.js</span><span class="tick"></span></div>
-<pre><code><span class="c">// One unreadable optional field used to kill the whole page.</span>
-<span class="k">async function</span> <span class="f">load</span>() {
-  <span class="k">for</span> (;;) {
-    <span class="k">try</span> { <span class="k">return await</span> <span class="f">query</span>(REQUIRED.<span class="f">concat</span>(OPTIONAL)); }
-    <span class="k">catch</span> (e) {
-      <span class="k">const</span> f = <span class="f">optionalFieldNamedIn</span>(e.message);
-      <span class="k">if</span> (!f) <span class="k">throw</span> e;              <span class="c">// real outage: surface it</span>
-      OPTIONAL = OPTIONAL.<span class="f">filter</span>(x =&gt; x !== f);
-      <span class="f">banner</span>(<span class="s">`Can't read ${f}. Everything else is safe to use.`</span>);
-    }
-  }
-}</code></pre>
-          </div>
-        </details>
+      <h3 class="dsp-2">CS Carve Studio</h3>
+      <span class="kind">The annual book-of-business carve, run on agreed rules instead of by hand</span>
+      <div class="star">
+        <div class="r"><span class="k">Problem</span><p>The prior year's carve data arrived late and hurt the start of the year. Books were balanced by hand, with no shared rules and no way to compare scenarios.</p></div>
+        <div class="r"><span class="k">Built</span><p>Each territory carries its agreed rules: caps, disruption limits, renewal locks, and sales-pod alignment. Auto-balance moves whole customer families into the best-fit book, and nothing saves until a person confirms. It surfaced two conflicts before sign-off that would otherwise have landed late.</p></div>
+        <div class="r res"><span class="k">Result</span><ul>
+          <li>Books signed off <b>30+ days earlier</b> than the prior year</li>
+          <li>August 15 go-live hit with <b>every book inside caps</b> or under a signed exception</li>
+          <li>Moves within 5% of plan; under 3% unplanned re-carve</li>
+        </ul></div>
       </div>
-      <div class="outcome">
-        <span class="lbl">Outcome</span>
-        <p>Runs <b>100% of renewal reviews</b> for 18 managers across Enterprise, international, and Mid-Market segments, plus every Renewals sales leader; the spreadsheet is archived. <b>85% of $250K+ renewals</b> are now reviewed at least 90 days before close. Reviewed renewals show <b>25% less late-identified risk</b> than unreviewed ones and 10% better forecast accuracy, and renewal business-review coverage roughly doubled.</p>
-        <p class="est"><i>Self-reported</i> ~60% less manager prep time per review cycle, with under 10% of meeting time now spent on system lookups. Tracking toward 90% early-review coverage and 40% less late-identified risk by April 2027.</p>
-      </div>
+      <p class="next"><i>Next</i>Run the FY29 carve in the tool, with under 5% cumulative re-carve.</p>
       <div class="shots">
-        <figure class="shot"><div class="shot-bar"><span>renewal review · review cards · illustrative</span></div><img loading="lazy" decoding="async" src="renewal-review.webp" alt="Renewal Review Workbench review cards, rebuilt with synthetic data"></figure>
-        <span class="shot-hint">Click any screenshot to enlarge</span>
+        <figure class="shot"><div class="shot-bar"><span>carve studio · territory overview · illustrative</span></div><img loading="lazy" decoding="async" src="carve-studio.webp" alt="CS Carve Studio territory overview, rebuilt with synthetic data"></figure>
       </div>
     </div>
   </article>
@@ -726,26 +697,30 @@
     <div class="entry-rail">
       <span class="eid">F.05</span>
       <dl class="spec">
-        <div><dt>State</dt><dd class="ok">Live · system of record</dd></div>
-        <div><dt>Accounts per snapshot</dt><dd>~2,300</dd></div>
-        <div><dt>Used weekly by</dt><dd class="ok">13 of 13 leaders</dd></div>
-        <div><dt>Refresh</dt><dd class="ok">47 min → under 5</dd></div>
+        <div><dt>Status</dt><dd class="ok">Live · 3 skills</dd></div>
+        <div><dt>Reporting skill</dt><dd class="ok">100+ uses</dd></div>
+        <div><dt>Rules skill</dt><dd class="ok">6 analysts · 5 rules</dd></div>
+        <div><dt>Briefings</dt><dd>CS · Implementation · Sales</dd></div>
       </dl>
     </div>
     <div>
-      <h3 class="dsp-2">Enterprise KPI Command Center</h3>
-      <span class="kind">One shared, dated snapshot of the segment's KPIs · the accounts behind every number · each manager's open work in one place</span>
-      <p>KPI reporting lived in aging dashboards, and <b>the same KPI returned different numbers</b> depending on the report. One example: business-review completion measured from task closure read far higher than coverage measured from reviews actually held. Same activity, two answers.</p>
-      <p>Every manager now reads <b>one dated snapshot</b>, so everyone sees the same number with the same as-of stamp. Each KPI is color-coded against target and clicks through to the accounts behind it, and a data-health view lists every excluded account and the fix.</p>
-      <div class="outcome">
-        <span class="lbl">Outcome</span>
-        <p>The system of record for Enterprise KPI reporting, used weekly by <b>all 13 managers and directors</b>. Showing each gap account by account <b>more than doubled risk-plan coverage on high-risk accounts</b> and halved the share of at-risk accounts still marked green. Half the legacy dashboards are retired, number disputes are near zero, and CS Ops reporting time is down 60%.</p>
-        <p class="est"><i>Target</i> Every Enterprise KPI at or within 80% of target, and the same pattern as the system of record for every CS segment, by April 2027.</p>
+      <h3 class="dsp-2">Claude Skills for Trusted Data</h3>
+      <span class="kind">Skills other people run themselves, on the same governed definitions</span>
+      <div class="star">
+        <div class="r"><span class="k">Problem</span><p>Getting a trusted number, or turning a request into a correct Gainsight rule, meant pulling in Ops. Ops became the bottleneck, and people filled the gap with numbers that didn't match.</p></div>
+        <div class="r"><span class="k">Built</span><ul>
+          <li><b>Reporting skill:</b> CSMs and ICs pull governed metrics on demand, in a structured format.</li>
+          <li><b>Gainsight rules skill:</b> turns an unstructured CTA request or a BRD into a step-by-step build guide for complex rules.</li>
+          <li><b>Briefing generator:</b> builds a briefing agent per stakeholder that reads five systems into a two-minute morning summary.</li>
+        </ul></div>
+        <div class="r res"><span class="k">Result</span><ul>
+          <li><b>100+ self-serve reporting pulls</b> since launch, without an Ops request</li>
+          <li>Rules skill used by <b>6 operations analysts</b> to build <b>5 complex rules</b></li>
+          <li>Briefings live across CS, Implementation Services, and Sales; validated <b>~2 hrs/week per user</b></li>
+        </ul></div>
       </div>
-      <div class="note">A KPI tool is a definitions project first. <b>One number everywhere</b> is the requirement; the dashboard is the delivery mechanism.</div>
       <div class="shots">
-        <figure class="shot"><div class="shot-bar"><span>kpi command center · scorecard · illustrative</span></div><img loading="lazy" decoding="async" src="kpi-command-center.webp" alt="Enterprise KPI Command Center scorecard, rebuilt with synthetic data"></figure>
-        <span class="shot-hint">Click any screenshot to enlarge</span>
+        <figure class="shot shot--md"><div class="shot-bar"><span>daily briefing · generated output</span></div><img loading="lazy" decoding="async" src="daily-briefing.webp" alt="Daily briefing agent output"></figure>
       </div>
     </div>
   </article>
@@ -755,53 +730,25 @@
     <div class="entry-rail">
       <span class="eid">F.06</span>
       <dl class="spec">
-        <div><dt>State</dt><dd class="ok">FY28 carve delivered</dd></div>
-        <div><dt>Territories</dt><dd class="ok">8 of 8</dd></div>
-        <div><dt>Books inside caps</dt><dd class="ok">100% or signed exception</dd></div>
-        <div><dt>Partners</dt><dd>RevOps + Sales Planning</dd></div>
-      </dl>
-    </div>
-    <div>
-      <h3 class="dsp-2">CS Carve Studio</h3>
-      <span class="kind">Annual book-of-business carve · real books against agreed rules · scenarios and auto-balance · run jointly with RevOps</span>
-      <p>The annual carve decides which CSM owns which customer for the year. The prior cycle's data <b>arrived too late and hurt the start of the year</b>, and books were balanced by hand with no shared rules and no way to compare scenarios.</p>
-      <p>Each territory carries its agreed rules: caps, disruption limits, renewal and pipeline locks, and alignment to sales pods. Auto-balance moves <b>whole customer families</b> out of books that break a rule into the best-fit book, and nothing saves until a person confirms the preview. Before sign-off it surfaced two conflicts that would otherwise have landed late: book caps that made the carve a headcount decision for Finance, and a sales-pod rule that couldn't coexist with the disruption cap.</p>
-      <div class="outcome">
-        <span class="lbl">Outcome</span>
-        <p>Books signed off <b>30+ days earlier than the prior year</b>, and the August 15 go-live hit with <b>every book inside caps</b> or under a signed exception. Disruption stayed within cap in every territory, actual moves landed within 5% of plan, unplanned re-carve stayed under 3%, and moved accounts performed no worse than unmoved ones.</p>
-        <p class="est"><i>Target</i> The FY29 carve run in the tool from this year's rules and history, with under 5% cumulative re-carve.</p>
-      </div>
-      <div class="shots">
-        <figure class="shot"><div class="shot-bar"><span>carve studio · territory overview · illustrative</span></div><img loading="lazy" decoding="async" src="carve-studio.webp" alt="CS Carve Studio territory overview, rebuilt with synthetic data"></figure>
-        <span class="shot-hint">Click any screenshot to enlarge</span>
-      </div>
-    </div>
-  </article>
-
-  <!-- F.07 -->
-  <article class="entry rv" id="f07">
-    <div class="entry-rail">
-      <span class="eid">F.07</span>
-      <dl class="spec">
-        <div><dt>State</dt><dd>Completed · FY27 input</dd></div>
+        <div><dt>Status</dt><dd>Completed · FY27 input</dd></div>
         <div><dt>Sample</dt><dd>~1,000 renewals / 2 yrs</dd></div>
-        <div><dt>Survived controls</dt><dd class="ok">2 of ~8 drivers</dd></div>
         <div><dt>Claim</dt><dd>Predictive, not causal</dd></div>
       </dl>
     </div>
     <div>
       <h3 class="dsp-2">Renewal-Driver Analysis</h3>
-      <span class="kind">Agentic Claude workflow across CRM, warehouse, CS platform and enterprise search → regression → executive report</span>
-      <p>One agentic workflow pulled two years of Enterprise renewals live from four systems, synthesized internal context, ran the statistics, and rendered a director-ready report: work that normally takes an analyst, a BizOps partner, and a designer.</p>
-      <p>A <b>size-controlled logistic regression</b> found that only two of roughly eight commonly assumed activities stay predictive of renewal once account size, segment, and tenure are controlled for. I reported them as predictive, not causal, and <b>reconciled the team's renewal metric to the certified Finance rate</b> rather than the more flattering local number.</p>
-      <div class="outcome">
-        <span class="lbl">Outcome</span>
-        <p>Closed a long-standing gap in how the segment reports renewal rate, and fed a CS and Renewals operating-model proposal into FY27 planning.</p>
+      <span class="kind">An agentic Claude workflow across CRM, warehouse, CS platform, and enterprise search</span>
+      <div class="star">
+        <div class="r"><span class="k">Problem</span><p>The team tracked about eight activities it assumed drove renewal, and its renewal metric didn't match Finance's certified rate.</p></div>
+        <div class="r"><span class="k">Built</span><p>One workflow that pulled two years of renewals from four systems, ran a size-controlled logistic regression, and produced a director-ready report.</p></div>
+        <div class="r res"><span class="k">Result</span><ul>
+          <li>Only <b>2 of ~8 assumed drivers</b> stay predictive once size, segment, and tenure are controlled for</li>
+          <li>Renewal metric <b>reconciled to the certified Finance rate</b></li>
+          <li>Findings used to <b>design the KPIs</b> the command center now tracks, and fed FY27 planning</li>
+        </ul></div>
       </div>
     </div>
   </article>
-
-  
 </section>
 </div>
 
@@ -809,32 +756,28 @@
 <div class="band-ink">
 <section id="governance" class="wrap">
   <div class="sec-head rv">
-    <span class="eyebrow lbl">F.08 · AI governance</span>
+    <span class="eyebrow lbl">F.07 · AI governance</span>
     <div>
       <h2 class="dsp">Governing AI across the org</h2>
-      <p class="intro">
-        Once many people build AI tools, keeping them trustworthy stops being a build problem. I proposed an operating model for
-        it, and I now lead the program implementing it across all nine CS and Services cost centers. Since October 2026 I've
-        also worked with Anthropic to optimize how Samsara CS uses Claude.
-      </p>
+      <p class="intro">I lead CS's AI Intake &amp; Adoption program across all nine CS and Services cost centers, and since October 2026 I've worked with Anthropic to optimize how Samsara CS uses Claude.</p>
     </div>
   </div>
 
   <div class="gov">
     <div class="gcell rv">
-      <span class="lbl">The problem</span>
+      <span class="lbl">Problem</span>
       <h4>Tooling spreads faster than ownership</h4>
-      <p>Discovery found <b>workflows that two or three people had each built independently</b>, with different logic and no agreed source of truth. Five such clusters are now consolidated into one sanctioned tool each.</p>
+      <p>Two or three people were building the same workflow independently, with different logic and no agreed source of truth.</p>
     </div>
     <div class="gcell rv">
-      <span class="lbl">The model</span>
+      <span class="lbl">Built</span>
       <h4>One intake, risk-tiered trust</h4>
-      <p>One intake path, with <b>90% of requests dispositioned within SLA</b>, an inventory of what's been built, and governance tiers. <b>No shared tool is promoted until its numbers reconcile</b> to the CRM or the CS platform, and every Tier 1 and 2 shared tool now passes.</p>
+      <p>One intake path, an inventory of what's been built, and governance tiers. <b>No shared tool is promoted until its numbers reconcile</b> to the CRM or CS platform.</p>
     </div>
     <div class="gcell rv">
-      <span class="lbl">The measure</span>
-      <h4>Adoption, not usage</h4>
-      <p>Usage, workflow adoption, and validated value are reported separately and never blended. <b>No time saving is claimed until users confirm the old process stopped.</b> Four before/after value cases are validated so far, tracking toward six by April 2027.</p>
+      <span class="lbl">Result</span>
+      <h4>Fewer, trusted tools</h4>
+      <p><b>90% of requests</b> handled within SLA, <b>5 duplicate clusters</b> consolidated, every Tier 1 and 2 tool passing, and <b>4 validated value cases</b>, tracking toward 6 by April 2027.</p>
     </div>
   </div>
 </section>
@@ -846,24 +789,24 @@
   <div class="sec-head rv">
     <span class="eyebrow lbl">Background</span>
     <div>
-      <h2 class="dsp">The role, and the stack behind it</h2>
+      <h2 class="dsp">Experience and stack</h2>
     </div>
   </div>
 
   <div class="roles rv">
     <div class="emp"><h3>Samsara · Connected Operations Platform</h3><span>NYSE: IOT · Jun 2022 to present</span></div>
-    <div class="role"><span class="yr now">Aug 2025 to present</span><div><h4>CS Operations &amp; Strategy Manager</h4><p>Sole operations partner to US Enterprise Success. Coverage design, capacity, renewal operations, KPI definitions; lead CS's AI Intake &amp; Adoption program.</p></div></div>
-    <div class="role"><span class="yr">Feb 2024 to Jul 2025</span><div><h4>Senior Sales Operations &amp; Strategy Analyst II</h4><p>Re-tiered $1B+ in ARR through a coverage-model redesign and built the operating systems 10+ senior leaders used for renewal forecasting and risk.</p></div></div>
-    <div class="role"><span class="yr">Jun 2022 to Feb 2024</span><div><h4>Customer Success Operations &amp; Strategy Analyst II</h4><p>Built a customer-health framework across 1,500+ Enterprise accounts and automated 250+ executive deliverables; selected for Matik's Product Advisory Council.</p></div></div>
+    <div class="role"><span class="yr now">Aug 2025 to present</span><div><h4>CS Operations &amp; Strategy Manager</h4><p>Sole operations partner to US Enterprise Success. Coverage, capacity, renewal operations, KPI definitions; lead CS's AI program.</p></div></div>
+    <div class="role"><span class="yr">Feb 2024 to Jul 2025</span><div><h4>Senior Sales Operations &amp; Strategy Analyst II</h4><p>Re-tiered $1B+ in ARR through a coverage-model redesign; built the operating systems 10+ senior leaders used for forecasting and risk.</p></div></div>
+    <div class="role"><span class="yr">Jun 2022 to Feb 2024</span><div><h4>Customer Success Operations &amp; Strategy Analyst II</h4><p>Customer-health framework across 1,500+ Enterprise accounts; automated 250+ executive deliverables.</p></div></div>
     <div class="emp"><h3>Chisholm, Chisholm &amp; Kilpatrick</h3><span>Providence, RI · Dec 2018 to Jun 2022</span></div>
-    <div class="role"><span class="yr">2018 to 2022</span><div><h4>Growth &amp; Development Strategy Analyst; Team Lead</h4><p>Financial models, forecasting, and SQL/Tableau reporting for firm-wide planning; led and mentored an analyst team.</p></div></div>
+    <div class="role"><span class="yr">2018 to 2022</span><div><h4>Growth &amp; Development Strategy Analyst; Team Lead</h4><p>Financial models, forecasting, and SQL/Tableau reporting for firm-wide planning; led an analyst team.</p></div></div>
   </div>
 
   <div class="stack" style="margin-top:36px">
-    <div class="col rv"><h5>AI systems</h5><ul><li>Claude agents, artifacts, Skills</li><li>MCP connectors</li><li>Per-user connector deployment</li><li>AI governance &amp; adoption measurement</li><li>Model selection &amp; cost governance</li></ul></div>
-    <div class="col rv"><h5>Data &amp; code</h5><ul><li>SQL · Databricks</li><li>Python · pandas · statsmodels</li><li>JavaScript · React</li><li>Tableau</li></ul></div>
-    <div class="col rv"><h5>Business systems</h5><ul><li>Salesforce</li><li>Gainsight (admin &amp; architecture)</li><li>Matik</li><li>Workday data</li></ul></div>
-    <div class="col rv"><h5>Strategy &amp; ops</h5><ul><li>Launch &amp; program management</li><li>Territory &amp; capacity design</li><li>KPI governance</li><li>Executive reporting</li></ul></div>
+    <div class="col rv"><h5>AI systems</h5><ul><li>Claude agents, artifacts, Skills</li><li>MCP connectors</li><li>AI governance &amp; adoption measurement</li></ul></div>
+    <div class="col rv"><h5>Data &amp; code</h5><ul><li>SQL · Databricks</li><li>Python · pandas · statsmodels</li><li>JavaScript · React · Tableau</li></ul></div>
+    <div class="col rv"><h5>Business systems</h5><ul><li>Salesforce</li><li>Gainsight (admin &amp; architecture)</li><li>Matik · Workday data</li></ul></div>
+    <div class="col rv"><h5>Strategy &amp; ops</h5><ul><li>Territory &amp; capacity design</li><li>KPI governance</li><li>Launch &amp; program management</li></ul></div>
   </div>
 </section>
 </div>
@@ -878,18 +821,19 @@
   <div class="prin">
     <div class="prow rv">
       <h4>Build it, prove it, hand it off</h4>
-      <p>The endpoint is other teams' operating process, not a tool I maintain. The briefing agent went from my morning to a generator running in three organizations, and the workbenches now run on each person's own access across several segments. <b>Success is when the tool stops being the point.</b></p>
+      <p>The goal is other teams' operating process, not a tool I maintain. <b>Success is when the tool stops being the point.</b></p>
+    </div>
+    <div class="prow rv">
+      <h4>Make the trusted path the easy one</h4>
+      <p>If the governed number is harder to get than a side spreadsheet, people use the spreadsheet. <b>I build so the right answer is also the fastest one.</b></p>
     </div>
     <div class="prow rv">
       <h4>Ground it or don't claim it</h4>
-      <p>Agents read only and state only facts they fetched. Findings are predictive, not causal, and reconciled to the certified number. Estimates are labeled as estimates, and <b>the measurement plan is written before the results exist</b>, so outcomes get reported as they land, including when they don't.</p>
-    </div>
-    <div class="prow rv">
-      <h4>Scope before speed</h4>
-      <p>The assigned scope and the first estimate are hypotheses. I check them against real usage before committing, and <b>I revise my own numbers upward when the evidence says to</b>.</p>
+      <p>Findings are predictive, not causal, and reconciled to the certified number. <b>Savings are claimed only after users confirm the old process stopped.</b></p>
     </div>
   </div>
 </section>
+
 
 <!-- ═══════════ CONTACT ═══════════ -->
 <footer id="contact" class="wrap">
